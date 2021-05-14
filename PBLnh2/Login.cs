@@ -10,16 +10,22 @@ using System.Windows.Forms;
 
 namespace PBLnh2
 {
-    public partial class NewAcc : Form
+    public partial class Login : Form
     {
-        public NewAcc()
+        public Login()
         {
             InitializeComponent();
         }
 
-        private void btnCan_Click(object sender, EventArgs e)
+        private void txtCan_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtCreate_Click(object sender, EventArgs e)
+        {
+            NewAcc n = new NewAcc();
+            n.Show();
         }
     }
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PBLnh2
 {
-    public partial class NewAcc : Form
+    public partial class ViewPersion : Form
     {
-        public NewAcc()
+        public ViewPersion()
         {
             InitializeComponent();
-        }
-
-        private void btnCan_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }
