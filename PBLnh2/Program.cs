@@ -16,7 +16,7 @@ namespace PBLnh2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewPersion());
+            Application.Run(new Login());
             //dotet
         }
     }
