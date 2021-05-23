@@ -29,42 +29,53 @@ namespace PBLnh2
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radMale = new System.Windows.Forms.RadioButton();
-            this.radFemale = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCMND = new System.Windows.Forms.TextBox();
+            this.txtDantoc = new System.Windows.Forms.TextBox();
+            this.txtJob = new System.Windows.Forms.TextBox();
+            this.txtSHK = new System.Windows.Forms.TextBox();
+            this.txtAdd = new System.Windows.Forms.TextBox();
+            this.txtQQ = new System.Windows.Forms.TextBox();
             this.btnView = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnCan = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtGender = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(201, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(225, 28);
-            this.textBox1.TabIndex = 0;
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtName.Location = new System.Drawing.Point(190, 141);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(225, 27);
+            this.txtName.TabIndex = 0;
             // 
             // label1
             // 
@@ -74,268 +85,380 @@ namespace PBLnh2
             this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(229, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(279, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Thông tin cơ bản của người dân";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(62, 87);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label3.Location = new System.Drawing.Point(61, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 24);
+            this.label3.Size = new System.Drawing.Size(95, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Họ và tên";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(62, 212);
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label4.Location = new System.Drawing.Point(61, 260);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 24);
+            this.label4.Size = new System.Drawing.Size(98, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Ngày sinh";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(62, 153);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label5.Location = new System.Drawing.Point(61, 194);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 24);
+            this.label5.Size = new System.Drawing.Size(97, 25);
             this.label5.TabIndex = 5;
             this.label5.Text = "Số CMND";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(541, 87);
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label6.Location = new System.Drawing.Point(378, 193);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 24);
+            this.label6.Size = new System.Drawing.Size(79, 25);
             this.label6.TabIndex = 6;
             this.label6.Text = "Dân tộc";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.radFemale);
-            this.groupBox1.Controls.Add(this.radMale);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(55, 274);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(371, 50);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Giới tính";
-            // 
-            // radMale
-            // 
-            this.radMale.AutoSize = true;
-            this.radMale.Location = new System.Drawing.Point(128, 0);
-            this.radMale.Name = "radMale";
-            this.radMale.Size = new System.Drawing.Size(71, 28);
-            this.radMale.TabIndex = 0;
-            this.radMale.TabStop = true;
-            this.radMale.Text = "Nam";
-            this.radMale.UseVisualStyleBackColor = true;
-            // 
-            // radFemale
-            // 
-            this.radFemale.AutoSize = true;
-            this.radFemale.Location = new System.Drawing.Point(294, 0);
-            this.radFemale.Name = "radFemale";
-            this.radFemale.Size = new System.Drawing.Size(56, 28);
-            this.radFemale.TabIndex = 1;
-            this.radFemale.TabStop = true;
-            this.radFemale.Text = "Nữ";
-            this.radFemale.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(541, 153);
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label7.Location = new System.Drawing.Point(61, 329);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 24);
+            this.label7.Size = new System.Drawing.Size(123, 25);
             this.label7.TabIndex = 8;
             this.label7.Text = "Nghề nghiệp";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(541, 212);
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label8.Location = new System.Drawing.Point(378, 332);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 24);
+            this.label8.Size = new System.Drawing.Size(74, 25);
             this.label8.TabIndex = 9;
-            this.label8.Text = "Số sổ hộ khẩu";
+            this.label8.Text = "Số SHK";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(71, 338);
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label9.Location = new System.Drawing.Point(61, 389);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 24);
+            this.label9.Size = new System.Drawing.Size(71, 25);
             this.label9.TabIndex = 10;
             this.label9.Text = "Địa chỉ";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(71, 411);
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label10.Location = new System.Drawing.Point(61, 471);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 24);
+            this.label10.Size = new System.Drawing.Size(95, 25);
             this.label10.TabIndex = 11;
             this.label10.Text = "Quê quán";
             // 
-            // textBox2
+            // txtCMND
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(201, 149);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(225, 28);
-            this.textBox2.TabIndex = 12;
+            this.txtCMND.BackColor = System.Drawing.Color.White;
+            this.txtCMND.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCMND.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCMND.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtCMND.Location = new System.Drawing.Point(190, 194);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.ReadOnly = true;
+            this.txtCMND.Size = new System.Drawing.Size(182, 27);
+            this.txtCMND.TabIndex = 12;
             // 
-            // textBox3
+            // txtDantoc
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(708, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(195, 28);
-            this.textBox3.TabIndex = 13;
+            this.txtDantoc.BackColor = System.Drawing.Color.White;
+            this.txtDantoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDantoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDantoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtDantoc.Location = new System.Drawing.Point(472, 194);
+            this.txtDantoc.Name = "txtDantoc";
+            this.txtDantoc.ReadOnly = true;
+            this.txtDantoc.Size = new System.Drawing.Size(147, 27);
+            this.txtDantoc.TabIndex = 13;
             // 
-            // textBox4
+            // txtJob
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(721, 149);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(182, 28);
-            this.textBox4.TabIndex = 14;
+            this.txtJob.BackColor = System.Drawing.Color.White;
+            this.txtJob.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtJob.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtJob.Location = new System.Drawing.Point(190, 328);
+            this.txtJob.Name = "txtJob";
+            this.txtJob.ReadOnly = true;
+            this.txtJob.Size = new System.Drawing.Size(182, 27);
+            this.txtJob.TabIndex = 14;
             // 
-            // textBox5
+            // txtSHK
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(712, 208);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(191, 28);
-            this.textBox5.TabIndex = 15;
+            this.txtSHK.BackColor = System.Drawing.Color.White;
+            this.txtSHK.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSHK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSHK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtSHK.Location = new System.Drawing.Point(472, 329);
+            this.txtSHK.Name = "txtSHK";
+            this.txtSHK.ReadOnly = true;
+            this.txtSHK.Size = new System.Drawing.Size(147, 27);
+            this.txtSHK.TabIndex = 15;
             // 
-            // textBox6
+            // txtAdd
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(75, 380);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(727, 28);
-            this.textBox6.TabIndex = 16;
+            this.txtAdd.BackColor = System.Drawing.Color.White;
+            this.txtAdd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtAdd.Location = new System.Drawing.Point(66, 429);
+            this.txtAdd.Name = "txtAdd";
+            this.txtAdd.ReadOnly = true;
+            this.txtAdd.Size = new System.Drawing.Size(553, 27);
+            this.txtAdd.TabIndex = 16;
             // 
-            // textBox7
+            // txtQQ
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(75, 457);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(727, 28);
-            this.textBox7.TabIndex = 17;
+            this.txtQQ.BackColor = System.Drawing.Color.White;
+            this.txtQQ.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQQ.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQQ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtQQ.Location = new System.Drawing.Point(66, 511);
+            this.txtQQ.Name = "txtQQ";
+            this.txtQQ.ReadOnly = true;
+            this.txtQQ.Size = new System.Drawing.Size(553, 27);
+            this.txtQQ.TabIndex = 17;
             // 
             // btnView
             // 
+            this.btnView.BackColor = System.Drawing.Color.White;
+            this.btnView.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.btnView.FlatAppearance.BorderSize = 2;
+            this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.Location = new System.Drawing.Point(167, 532);
+            this.btnView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.btnView.Location = new System.Drawing.Point(66, 570);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(182, 40);
+            this.btnView.Size = new System.Drawing.Size(248, 60);
             this.btnView.TabIndex = 18;
             this.btnView.Text = "Xem người thân";
-            this.btnView.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(452, 605);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(127, 39);
-            this.btnEdit.TabIndex = 19;
-            this.btnEdit.Text = "Chỉnh sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnView.UseVisualStyleBackColor = false;
             // 
             // btnDel
             // 
+            this.btnDel.BackColor = System.Drawing.Color.White;
+            this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.btnDel.FlatAppearance.BorderSize = 2;
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Location = new System.Drawing.Point(440, 532);
+            this.btnDel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.btnDel.Location = new System.Drawing.Point(383, 570);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(113, 40);
+            this.btnDel.Size = new System.Drawing.Size(236, 60);
             this.btnDel.TabIndex = 20;
             this.btnDel.Text = "Xoá ";
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(233, 613);
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label11.Location = new System.Drawing.Point(118, 658);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(193, 24);
+            this.label11.Size = new System.Drawing.Size(196, 25);
             this.label11.TabIndex = 21;
             this.label11.Text = "Thông tin có sai sót ? ";
             // 
-            // btnCan
+            // panel1
             // 
-            this.btnCan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCan.Location = new System.Drawing.Point(622, 532);
-            this.btnCan.Name = "btnCan";
-            this.btnCan.Size = new System.Drawing.Size(113, 40);
-            this.btnCan.TabIndex = 22;
-            this.btnCan.Text = "Đóng";
-            this.btnCan.UseVisualStyleBackColor = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(710, 77);
+            this.panel1.TabIndex = 23;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(182, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(335, 38);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "THÔNG TIN NGƯỜI DÂN";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label12.Location = new System.Drawing.Point(303, 653);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(190, 32);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Chỉnh sửa ngay";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label13.Location = new System.Drawing.Point(303, 696);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 32);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Exit";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label14.Location = new System.Drawing.Point(449, 144);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(86, 25);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Giới tính";
+            // 
+            // txtGender
+            // 
+            this.txtGender.BackColor = System.Drawing.Color.White;
+            this.txtGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtGender.Location = new System.Drawing.Point(541, 141);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.ReadOnly = true;
+            this.txtGender.Size = new System.Drawing.Size(78, 27);
+            this.txtGender.TabIndex = 27;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel2.Location = new System.Drawing.Point(472, 355);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(147, 2);
+            this.panel2.TabIndex = 28;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel3.Location = new System.Drawing.Point(190, 355);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(182, 2);
+            this.panel3.TabIndex = 29;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel4.Location = new System.Drawing.Point(190, 220);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(182, 2);
+            this.panel4.TabIndex = 29;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel5.Location = new System.Drawing.Point(472, 220);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(147, 2);
+            this.panel5.TabIndex = 29;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel6.Location = new System.Drawing.Point(66, 455);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(553, 2);
+            this.panel6.TabIndex = 29;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel7.Location = new System.Drawing.Point(66, 537);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(553, 2);
+            this.panel7.TabIndex = 29;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel8.Location = new System.Drawing.Point(190, 167);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(225, 2);
+            this.panel8.TabIndex = 29;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel9.Location = new System.Drawing.Point(541, 167);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(78, 2);
+            this.panel9.TabIndex = 29;
             // 
             // ViewPersion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 677);
-            this.Controls.Add(this.btnCan);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(710, 755);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.txtGender);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnView);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtQQ);
+            this.Controls.Add(this.txtAdd);
+            this.Controls.Add(this.txtSHK);
+            this.Controls.Add(this.txtJob);
+            this.Controls.Add(this.txtDantoc);
+            this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtName);
             this.Name = "ViewPersion";
             this.Text = "Thông tin người dân";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,30 +466,38 @@ namespace PBLnh2
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radFemale;
-        private System.Windows.Forms.RadioButton radMale;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtCMND;
+        private System.Windows.Forms.TextBox txtDantoc;
+        private System.Windows.Forms.TextBox txtJob;
+        private System.Windows.Forms.TextBox txtSHK;
+        private System.Windows.Forms.TextBox txtAdd;
+        private System.Windows.Forms.TextBox txtQQ;
         private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnCan;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtGender;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
     }
 }

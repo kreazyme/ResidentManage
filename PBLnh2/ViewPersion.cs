@@ -16,5 +16,15 @@ namespace PBLnh2
         {
             InitializeComponent();
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+  
+        }
     }
 }
