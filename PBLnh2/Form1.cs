@@ -40,16 +40,48 @@ namespace PBLnh2
             txtID.Focus();
         }
 
+
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            if(txtID.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập ID", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if(txtpw.Text ==string.Empty || txtrepw.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập đầy đủ Mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if(txtpw.Text != txtrepw.Text)
             {
-                MessageBox.Show("Mật khẩu nhập lại không trùng khớp!");
+                MessageBox.Show("Mật khẩu nhập lại không trùng khớp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtID.Clear();
                 txtpw.Clear();
                 txtrepw.Clear();
                 txtID.Focus();
+                return;
             }
+            Dangnhap dn = new Dangnhap();
+            dn.ID = Convert.ToInt32(txtID.Text.Trim());
+            dn.PW = txtpw.Text.Trim();
+            dn.Nguoitruycap = "1";
+            if(BLL.BLL_Login.AddUser(dn) == true)
+            {
+                MessageBox.Show("Đã tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi khi tạo tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            //FormClosed();
+            this.Close();
         }
     }
 }

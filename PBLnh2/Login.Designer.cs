@@ -66,7 +66,6 @@ namespace PBLnh2
             this.txtpw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.txtpw.Location = new System.Drawing.Point(156, 337);
             this.txtpw.Name = "txtpw";
-            this.txtpw.PasswordChar = '*';
             this.txtpw.Size = new System.Drawing.Size(171, 31);
             this.txtpw.TabIndex = 3;
             // 

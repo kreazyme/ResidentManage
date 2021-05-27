@@ -83,13 +83,13 @@ namespace PBLnh2
             this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.btnCreate.FlatAppearance.BorderSize = 0;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(61, 425);
+            this.btnCreate.Location = new System.Drawing.Point(29, 425);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(340, 49);
+            this.btnCreate.Size = new System.Drawing.Size(372, 49);
             this.btnCreate.TabIndex = 15;
-            this.btnCreate.Text = "Tạo tài khoản mới";
+            this.btnCreate.Text = "Đăng kí tài khoản mới";
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
@@ -126,6 +126,7 @@ namespace PBLnh2
             this.label1.Size = new System.Drawing.Size(328, 56);
             this.label1.TabIndex = 18;
             this.label1.Text = "Tạo tài khoản mới để đăng nhập \n              vào hệ thống";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBLnh2.BLL;
 
 namespace PBLnh2
 {
@@ -33,9 +34,32 @@ namespace PBLnh2
 
         }
 
+        private bool CheckLogin()
+        {
+            Dangnhap login = BLL_Login.GetUserbyID(txtID.Text);
+            if (login == null)
+                return false;
+            if (login.PW.Trim() == txtpw.Text)
+            { 
+                return true;
+            }
+            else return false;
+        }
+
+        
         private void txtLogin_Click(object sender, EventArgs e)
         {
-            if(txtID.Text == txtpw.Text)
+            if(txtID.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập ID","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if(txtpw.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập Mật khẩu", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if(CheckLogin())
             {
                 MainForm f = new MainForm();
                 f.Show();
@@ -43,7 +67,7 @@ namespace PBLnh2
             }
             else
             {
-                MessageBox.Show("Sai thông tin ddăng nhập, hãy thử lại");
+                MessageBox.Show("Sai thông tin đăng nhập, hãy thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtID.Clear();
                 txtpw.Clear();
                 txtID.Focus();
