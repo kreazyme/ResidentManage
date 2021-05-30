@@ -8,6 +8,19 @@ namespace PBLnh2.BLL
 {
     class BLL_Login
     {
+        private static BLL_Login _Instance;
+        public static BLL_Login Instance
+        {
+            get
+            {
+                if (_Instance == null)
+                {
+                    _Instance = new BLL_Login();
+                }
+                return _Instance;
+            }
+            private set { }
+        }
         public static Dangnhap GetUserbyID(string text)
         {
             int _id = Convert.ToInt32(text);
