@@ -48,8 +48,15 @@ namespace PBLnh2.BLL
             //int cmnd = Convert.ToInt32(m);
             PBLEntities context = new PBLEntities();
             Tamtru tt = context.Tamtrus.Find(cmnd);
-            context.Tamtrus.Remove(tt);
-            context.SaveChanges();
+            if(tt == null)
+            {
+                return;
+            }
+            else
+            {
+                context.Tamtrus.Remove(tt);
+                context.SaveChanges();
+            }
         }
     }
 }

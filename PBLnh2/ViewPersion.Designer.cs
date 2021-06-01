@@ -29,6 +29,7 @@ namespace PBLnh2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewPersion));
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,6 +63,9 @@ namespace PBLnh2
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,10 +75,10 @@ namespace PBLnh2
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtName.Location = new System.Drawing.Point(190, 141);
+            this.txtName.Location = new System.Drawing.Point(203, 141);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(225, 27);
+            this.txtName.Size = new System.Drawing.Size(212, 27);
             this.txtName.TabIndex = 0;
             // 
             // label1
@@ -179,10 +183,10 @@ namespace PBLnh2
             this.txtCMND.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCMND.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCMND.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtCMND.Location = new System.Drawing.Point(190, 194);
+            this.txtCMND.Location = new System.Drawing.Point(203, 194);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.ReadOnly = true;
-            this.txtCMND.Size = new System.Drawing.Size(182, 27);
+            this.txtCMND.Size = new System.Drawing.Size(169, 27);
             this.txtCMND.TabIndex = 12;
             // 
             // txtDantoc
@@ -191,10 +195,10 @@ namespace PBLnh2
             this.txtDantoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDantoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDantoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtDantoc.Location = new System.Drawing.Point(472, 194);
+            this.txtDantoc.Location = new System.Drawing.Point(489, 194);
             this.txtDantoc.Name = "txtDantoc";
             this.txtDantoc.ReadOnly = true;
-            this.txtDantoc.Size = new System.Drawing.Size(147, 27);
+            this.txtDantoc.Size = new System.Drawing.Size(130, 27);
             this.txtDantoc.TabIndex = 13;
             // 
             // txtJob
@@ -203,10 +207,10 @@ namespace PBLnh2
             this.txtJob.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtJob.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtJob.Location = new System.Drawing.Point(190, 328);
+            this.txtJob.Location = new System.Drawing.Point(220, 328);
             this.txtJob.Name = "txtJob";
             this.txtJob.ReadOnly = true;
-            this.txtJob.Size = new System.Drawing.Size(182, 27);
+            this.txtJob.Size = new System.Drawing.Size(152, 27);
             this.txtJob.TabIndex = 14;
             // 
             // txtSHK
@@ -215,10 +219,10 @@ namespace PBLnh2
             this.txtSHK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSHK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSHK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtSHK.Location = new System.Drawing.Point(472, 329);
+            this.txtSHK.Location = new System.Drawing.Point(489, 329);
             this.txtSHK.Name = "txtSHK";
             this.txtSHK.ReadOnly = true;
-            this.txtSHK.Size = new System.Drawing.Size(147, 27);
+            this.txtSHK.Size = new System.Drawing.Size(130, 27);
             this.txtSHK.TabIndex = 15;
             // 
             // txtAdd
@@ -227,10 +231,10 @@ namespace PBLnh2
             this.txtAdd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtAdd.Location = new System.Drawing.Point(66, 429);
+            this.txtAdd.Location = new System.Drawing.Point(86, 429);
             this.txtAdd.Name = "txtAdd";
             this.txtAdd.ReadOnly = true;
-            this.txtAdd.Size = new System.Drawing.Size(553, 27);
+            this.txtAdd.Size = new System.Drawing.Size(533, 27);
             this.txtAdd.TabIndex = 16;
             // 
             // txtQQ
@@ -239,10 +243,10 @@ namespace PBLnh2
             this.txtQQ.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQQ.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQQ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtQQ.Location = new System.Drawing.Point(66, 511);
+            this.txtQQ.Location = new System.Drawing.Point(86, 511);
             this.txtQQ.Name = "txtQQ";
             this.txtQQ.ReadOnly = true;
-            this.txtQQ.Size = new System.Drawing.Size(553, 27);
+            this.txtQQ.Size = new System.Drawing.Size(533, 27);
             this.txtQQ.TabIndex = 17;
             // 
             // btnView
@@ -274,6 +278,7 @@ namespace PBLnh2
             this.btnDel.TabIndex = 20;
             this.btnDel.Text = "Xoá ";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // label11
             // 
@@ -347,10 +352,10 @@ namespace PBLnh2
             this.txtGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtGender.Location = new System.Drawing.Point(541, 141);
+            this.txtGender.Location = new System.Drawing.Point(552, 141);
             this.txtGender.Name = "txtGender";
             this.txtGender.ReadOnly = true;
-            this.txtGender.Size = new System.Drawing.Size(78, 27);
+            this.txtGender.Size = new System.Drawing.Size(67, 27);
             this.txtGender.TabIndex = 27;
             // 
             // panel2
@@ -364,9 +369,9 @@ namespace PBLnh2
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panel3.Location = new System.Drawing.Point(190, 355);
+            this.panel3.Location = new System.Drawing.Point(203, 355);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(182, 2);
+            this.panel3.Size = new System.Drawing.Size(169, 2);
             this.panel3.TabIndex = 29;
             // 
             // panel4
@@ -417,12 +422,46 @@ namespace PBLnh2
             this.panel9.Size = new System.Drawing.Size(78, 2);
             this.panel9.TabIndex = 29;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label15.Location = new System.Drawing.Point(356, 260);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(125, 25);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "Số điện thoại";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel10.Location = new System.Drawing.Point(505, 283);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(114, 2);
+            this.panel10.TabIndex = 30;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.BackColor = System.Drawing.Color.White;
+            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtSDT.Location = new System.Drawing.Point(505, 257);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.ReadOnly = true;
+            this.txtSDT.Size = new System.Drawing.Size(110, 27);
+            this.txtSDT.TabIndex = 29;
+            // 
             // ViewPersion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(710, 755);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
@@ -455,7 +494,9 @@ namespace PBLnh2
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewPersion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin người dân";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -499,5 +540,8 @@ namespace PBLnh2
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox txtSDT;
     }
 }

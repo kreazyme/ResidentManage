@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PBLnh2.BLL;
+using System.Data.Entity;
+//using System.Data.
 
 namespace PBLnh2.BLL
 {
@@ -53,14 +55,17 @@ namespace PBLnh2.BLL
         public static List<Thongtinnhankhau> GetNKbyChuho(string m)
         {
             int _idChuho = Convert.ToInt32(m);
-            using (var context = new PBLEntities()){
+            using (var context = new PBLEntities())
+            {
                 List<Thongtinnhankhau> ls = (from r in context.Thongtinnhankhaus where r.IDQuanhe == _idChuho select r).ToList();
                 return ls;
             }
         }
         public static List<Thongtinnhankhau> GetNKbyTen(string m)
         {
-
+            PBLEntities context = new PBLEntities();
+            List<Thongtinnhankhau> ls =  context.Thongtinnhankhaus.Where(r => r.Name.Contains(m)).ToList();
+            return ls;
         }
         public static bool UpdateNK(Thongtinnhankhau nk)
         {
@@ -74,7 +79,7 @@ namespace PBLnh2.BLL
                 tt.dob = nk.dob;
                 tt.Gender = nk.Gender;
                 tt.IDQuanhe = nk.IDQuanhe;
-                tt.IDtamtru = nk.IDtamtru;
+                //tt.IDtamtru = nk.IDtamtru;
                 tt.NgheNghiep = nk.NgheNghiep;
                 tt.NguyenQuan = nk.NguyenQuan;
                 tt.SoSHK = nk.SoSHK;

@@ -25,10 +25,8 @@ namespace PBLnh2
         public string Diachi { get; set; }
         public string NguyenQuan { get; set; }
         public string SDT { get; set; }
-        public Nullable<int> IDtamtru { get; set; }
     
         public virtual DSHoKhau DSHoKhau { get; set; }
         public virtual QHChuho QHChuho { get; set; }
-        public virtual Tamtru Tamtru { get; set; }
     }
 }

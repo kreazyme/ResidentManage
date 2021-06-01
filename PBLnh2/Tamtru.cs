@@ -19,7 +19,5 @@ namespace PBLnh2
         public string Ghichu { get; set; }
         public Nullable<System.DateTime> Thoigiandichuyen { get; set; }
         public int CMND { get; set; }
-    
-        public virtual Thongtinnhankhau Thongtinnhankhau { get; set; }
     }
 }

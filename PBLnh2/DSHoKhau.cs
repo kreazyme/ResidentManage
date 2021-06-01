@@ -22,7 +22,6 @@ namespace PBLnh2
     
         public int SoSHK { get; set; }
         public string Chuho { get; set; }
-        public string Diachi { get; set; }
         public string Ghichu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

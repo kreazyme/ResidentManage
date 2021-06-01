@@ -34,10 +34,26 @@ namespace PBLnh2
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panMenu = new System.Windows.Forms.Panel();
             this.panSearch = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtSearchContext = new System.Windows.Forms.TextBox();
+            this.butSearchFamily = new System.Windows.Forms.Button();
+            this.btnSearchCMND = new System.Windows.Forms.Button();
+            this.btnSearchName = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panSort = new System.Windows.Forms.Panel();
+            this.btnSortAge = new System.Windows.Forms.Button();
+            this.btnSortCMND = new System.Windows.Forms.Button();
+            this.btnSortName = new System.Windows.Forms.Button();
+            this.btnSort = new System.Windows.Forms.Button();
             this.panLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelText = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgv = new System.Windows.Forms.DataGridView();
@@ -47,25 +63,14 @@ namespace PBLnh2
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone_Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.butSearchFamily = new System.Windows.Forms.Button();
-            this.btnSearchCMND = new System.Windows.Forms.Button();
-            this.btnSearchName = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSortAge = new System.Windows.Forms.Button();
-            this.btnSortCMND = new System.Windows.Forms.Button();
-            this.btnSortName = new System.Windows.Forms.Button();
-            this.btnSort = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panMenu.SuspendLayout();
             this.panSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panSort.SuspendLayout();
             this.panLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panMenu
@@ -88,166 +93,54 @@ namespace PBLnh2
             // panSearch
             // 
             this.panSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panSearch.Controls.Add(this.panel1);
+            this.panSearch.Controls.Add(this.pictureBox2);
+            this.panSearch.Controls.Add(this.txtSearchContext);
             this.panSearch.Controls.Add(this.butSearchFamily);
             this.panSearch.Controls.Add(this.btnSearchCMND);
             this.panSearch.Controls.Add(this.btnSearchName);
             this.panSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.panSearch.Location = new System.Drawing.Point(0, 661);
             this.panSearch.Name = "panSearch";
-            this.panSearch.Size = new System.Drawing.Size(256, 198);
+            this.panSearch.Size = new System.Drawing.Size(256, 244);
             this.panSearch.TabIndex = 7;
             // 
-            // panSort
+            // panel1
             // 
-            this.panSort.Controls.Add(this.btnSortAge);
-            this.panSort.Controls.Add(this.btnSortCMND);
-            this.panSort.Controls.Add(this.btnSortName);
-            this.panSort.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panSort.Location = new System.Drawing.Point(0, 206);
-            this.panSort.Name = "panSort";
-            this.panSort.Size = new System.Drawing.Size(256, 195);
-            this.panSort.TabIndex = 2;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 242);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(60, 2);
+            this.panel1.TabIndex = 7;
             // 
-            // panLogo
+            // pictureBox2
             // 
-            this.panLogo.Controls.Add(this.pictureBox1);
-            this.panLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panLogo.Location = new System.Drawing.Point(0, 0);
-            this.panLogo.Name = "panLogo";
-            this.panLogo.Size = new System.Drawing.Size(256, 141);
-            this.panLogo.TabIndex = 0;
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::PBLnh2.Properties.Resources.search1;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 195);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 49);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
             // 
-            // panelText
+            // txtSearchContext
             // 
-            this.panelText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panelText.Controls.Add(this.label1);
-            this.panelText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelText.Location = new System.Drawing.Point(277, 0);
-            this.panelText.Name = "panelText";
-            this.panelText.Size = new System.Drawing.Size(918, 103);
-            this.panelText.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(225, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(389, 41);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "DANH SÁCH NHÂN KHẨU";
-            // 
-            // dtgv
-            // 
-            this.dtgv.AllowUserToAddRows = false;
-            this.dtgv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgv.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CMND,
-            this.Namedgv,
-            this.Gender,
-            this.Age,
-            this.Phone_Num,
-            this.Address});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgv.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dtgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgv.GridColor = System.Drawing.Color.White;
-            this.dtgv.Location = new System.Drawing.Point(277, 103);
-            this.dtgv.Name = "dtgv";
-            this.dtgv.ReadOnly = true;
-            this.dtgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgv.RowHeadersWidth = 20;
-            this.dtgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            this.dtgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dtgv.RowTemplate.Height = 24;
-            this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgv.Size = new System.Drawing.Size(918, 580);
-            this.dtgv.TabIndex = 2;
-            // 
-            // CMND
-            // 
-            this.CMND.HeaderText = "Số CMND";
-            this.CMND.MinimumWidth = 6;
-            this.CMND.Name = "CMND";
-            this.CMND.ReadOnly = true;
-            // 
-            // Namedgv
-            // 
-            this.Namedgv.HeaderText = "Họ tên";
-            this.Namedgv.MinimumWidth = 6;
-            this.Namedgv.Name = "Namedgv";
-            this.Namedgv.ReadOnly = true;
-            this.Namedgv.Width = 125;
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Giới tính";
-            this.Gender.MinimumWidth = 6;
-            this.Gender.Name = "Gender";
-            this.Gender.ReadOnly = true;
-            this.Gender.Width = 90;
-            // 
-            // Age
-            // 
-            this.Age.HeaderText = "Năm sinh";
-            this.Age.MinimumWidth = 6;
-            this.Age.Name = "Age";
-            this.Age.ReadOnly = true;
-            this.Age.Width = 95;
-            // 
-            // Phone_Num
-            // 
-            this.Phone_Num.HeaderText = "SDT";
-            this.Phone_Num.MinimumWidth = 6;
-            this.Phone_Num.Name = "Phone_Num";
-            this.Phone_Num.ReadOnly = true;
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Địa chỉ";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 150;
+            this.txtSearchContext.BackColor = System.Drawing.Color.White;
+            this.txtSearchContext.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearchContext.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txtSearchContext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchContext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtSearchContext.Location = new System.Drawing.Point(60, 195);
+            this.txtSearchContext.Multiline = true;
+            this.txtSearchContext.Name = "txtSearchContext";
+            this.txtSearchContext.Size = new System.Drawing.Size(196, 49);
+            this.txtSearchContext.TabIndex = 5;
+            this.txtSearchContext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchContext.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearchContext_MouseClick);
+            this.txtSearchContext.TextChanged += new System.EventHandler(this.txtSearchContext_TextChanged);
             // 
             // butSearchFamily
             // 
@@ -271,7 +164,7 @@ namespace PBLnh2
             // 
             // btnSearchCMND
             // 
-            this.btnSearchCMND.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearchCMND.BackColor = System.Drawing.Color.White;
             this.btnSearchCMND.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchCMND.FlatAppearance.BorderSize = 0;
             this.btnSearchCMND.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -292,7 +185,7 @@ namespace PBLnh2
             // 
             // btnSearchName
             // 
-            this.btnSearchName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearchName.BackColor = System.Drawing.Color.White;
             this.btnSearchName.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchName.FlatAppearance.BorderSize = 0;
             this.btnSearchName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -395,6 +288,17 @@ namespace PBLnh2
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // panSort
+            // 
+            this.panSort.Controls.Add(this.btnSortAge);
+            this.panSort.Controls.Add(this.btnSortCMND);
+            this.panSort.Controls.Add(this.btnSortName);
+            this.panSort.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panSort.Location = new System.Drawing.Point(0, 206);
+            this.panSort.Name = "panSort";
+            this.panSort.Size = new System.Drawing.Size(256, 195);
+            this.panSort.TabIndex = 2;
+            // 
             // btnSortAge
             // 
             this.btnSortAge.BackColor = System.Drawing.Color.White;
@@ -479,6 +383,15 @@ namespace PBLnh2
             this.btnSort.UseVisualStyleBackColor = false;
             this.btnSort.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panLogo
+            // 
+            this.panLogo.Controls.Add(this.pictureBox1);
+            this.panLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panLogo.Location = new System.Drawing.Point(0, 0);
+            this.panLogo.Name = "panLogo";
+            this.panLogo.Size = new System.Drawing.Size(256, 141);
+            this.panLogo.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
@@ -491,27 +404,163 @@ namespace PBLnh2
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panelText
+            // 
+            this.panelText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panelText.Controls.Add(this.label1);
+            this.panelText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelText.Location = new System.Drawing.Point(277, 0);
+            this.panelText.Name = "panelText";
+            this.panelText.Size = new System.Drawing.Size(975, 103);
+            this.panelText.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(280, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(389, 41);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "DANH SÁCH NHÂN KHẨU";
+            // 
+            // dtgv
+            // 
+            this.dtgv.AllowUserToAddRows = false;
+            this.dtgv.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgv.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CMND,
+            this.Namedgv,
+            this.Gender,
+            this.Age,
+            this.Phone_Num,
+            this.Address});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgv.GridColor = System.Drawing.Color.White;
+            this.dtgv.Location = new System.Drawing.Point(277, 103);
+            this.dtgv.Name = "dtgv";
+            this.dtgv.ReadOnly = true;
+            this.dtgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgv.RowHeadersWidth = 20;
+            this.dtgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            this.dtgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgv.RowTemplate.Height = 24;
+            this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgv.Size = new System.Drawing.Size(975, 580);
+            this.dtgv.TabIndex = 2;
+            this.dtgv.DoubleClick += new System.EventHandler(this.dtgv_DoubleClick);
+            // 
+            // CMND
+            // 
+            this.CMND.HeaderText = "Số CMND";
+            this.CMND.MinimumWidth = 6;
+            this.CMND.Name = "CMND";
+            this.CMND.ReadOnly = true;
+            this.CMND.Width = 125;
+            // 
+            // Namedgv
+            // 
+            this.Namedgv.HeaderText = "Họ tên";
+            this.Namedgv.MinimumWidth = 6;
+            this.Namedgv.Name = "Namedgv";
+            this.Namedgv.ReadOnly = true;
+            this.Namedgv.Width = 174;
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Giới tính";
+            this.Gender.MinimumWidth = 6;
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Width = 90;
+            // 
+            // Age
+            // 
+            this.Age.HeaderText = "Năm sinh";
+            this.Age.MinimumWidth = 6;
+            this.Age.Name = "Age";
+            this.Age.ReadOnly = true;
+            this.Age.Width = 95;
+            // 
+            // Phone_Num
+            // 
+            this.Phone_Num.HeaderText = "SDT";
+            this.Phone_Num.MinimumWidth = 6;
+            this.Phone_Num.Name = "Phone_Num";
+            this.Phone_Num.ReadOnly = true;
+            this.Phone_Num.Width = 110;
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Địa chỉ";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 135;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1195, 683);
+            this.ClientSize = new System.Drawing.Size(1252, 683);
             this.Controls.Add(this.dtgv);
             this.Controls.Add(this.panelText);
             this.Controls.Add(this.panMenu);
             this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.panMenu.ResumeLayout(false);
             this.panSearch.ResumeLayout(false);
+            this.panSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panSort.ResumeLayout(false);
             this.panLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelText.ResumeLayout(false);
             this.panelText.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -536,12 +585,15 @@ namespace PBLnh2
         private System.Windows.Forms.Panel panelText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtgv;
+        private System.Windows.Forms.Button butSearchFamily;
+        private System.Windows.Forms.TextBox txtSearchContext;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
         private System.Windows.Forms.DataGridViewTextBoxColumn Namedgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn Age;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone_Num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.Button butSearchFamily;
     }
 }

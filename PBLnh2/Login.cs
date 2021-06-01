@@ -51,7 +51,7 @@ namespace PBLnh2
         {
             if(txtID.Text == string.Empty)
             {
-                MessageBox.Show("Bạn chưa nhập ID","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập Tên người dùng","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if(txtpw.Text == string.Empty)
@@ -91,5 +91,6 @@ namespace PBLnh2
         {
             Close();
         }
+
     }
 }

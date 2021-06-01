@@ -45,7 +45,7 @@ namespace PBLnh2
         {
             if(txtID.Text == string.Empty)
             {
-                MessageBox.Show("Bạn chưa nhập ID", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập Tên người dùng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if(txtpw.Text ==string.Empty || txtrepw.Text == string.Empty)
@@ -55,7 +55,7 @@ namespace PBLnh2
             }
             if(txtpw.Text != txtrepw.Text)
             {
-                MessageBox.Show("Mật khẩu nhập lại không trùng khớp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Mật khẩu không trùng khớp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtID.Clear();
                 txtpw.Clear();
                 txtrepw.Clear();

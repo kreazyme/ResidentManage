@@ -21,5 +21,16 @@ namespace PBLnh2.BLL
             }
             private set { }
         }
+        public string GetQhbyID(int m)
+        {
+            PBLEntities context = new PBLEntities();
+            return context.QHChuhoes.Find(m).TenQuanhe;
+        }
+        public void AddQH(QHChuho qh)
+        {
+            PBLEntities context = new PBLEntities();
+            context.QHChuhoes.Add(qh);
+            context.SaveChanges();
+        }
     }
 }

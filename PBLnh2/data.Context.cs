@@ -25,10 +25,10 @@ namespace PBLnh2
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Dangnhap> Dangnhaps { get; set; }
         public virtual DbSet<DSHoKhau> DSHoKhaus { get; set; }
         public virtual DbSet<QHChuho> QHChuhoes { get; set; }
         public virtual DbSet<Tamtru> Tamtrus { get; set; }
         public virtual DbSet<Thongtinnhankhau> Thongtinnhankhaus { get; set; }
-        public virtual DbSet<Dangnhap> Dangnhaps { get; set; }
     }
 }

@@ -55,7 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_Chuho.cs" />
+    <Compile Include="BLL\BLL_DSHokhau.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
+    <Compile Include="BLL\BLL_Tamtru.cs" />
+    <Compile Include="BLL\BLL_Thongtinhankhau.cs" />
     <Compile Include="Dangnhap.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
@@ -219,23 +223,23 @@
     <None Include="Resources\family--v1.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="DTO\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>data.Context.cs</LastGenOutput>
       <DependentUpon>data.edmx</DependentUpon>
+      <LastGenOutput>data.Context.cs</LastGenOutput>
     </Content>
     <Content Include="data.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>data.edmx</DependentUpon>
       <LastGenOutput>data.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL\" />
-    <Folder Include="DTO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

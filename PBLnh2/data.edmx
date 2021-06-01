@@ -4,13 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="PBLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="PBLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Dangnhap">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="PW" Type="nchar" MaxLength="10" />
+          <Property Name="PW" Type="nvarchar(max)" />
           <Property Name="Nguoitruycap" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="DSHoKhau">
@@ -19,7 +19,6 @@
           </Key>
           <Property Name="SoSHK" Type="int" Nullable="false" />
           <Property Name="Chuho" Type="nvarchar" MaxLength="50" />
-          <Property Name="Diachi" Type="nvarchar" MaxLength="50" />
           <Property Name="Ghichu" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="QHChuho">
@@ -44,7 +43,7 @@
             <PropertyRef Name="CMND" />
           </Key>
           <Property Name="CMND" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar(max)" />
           <Property Name="dob" Type="date" />
           <Property Name="Gender" Type="bit" />
           <Property Name="Dantoc" Type="nvarchar" MaxLength="50" />
@@ -54,7 +53,6 @@
           <Property Name="Diachi" Type="nvarchar(max)" />
           <Property Name="NguyenQuan" Type="nvarchar(max)" />
           <Property Name="SDT" Type="nvarchar" MaxLength="50" />
-          <Property Name="IDtamtru" Type="int" />
         </EntityType>
         <Association Name="FK_Thongtinnhankhau_DSHoKhau">
           <End Role="DSHoKhau" Type="Self.DSHoKhau" Multiplicity="0..1" />
@@ -80,18 +78,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Thongtinnhankhau_Tamtru1">
-          <End Role="Tamtru" Type="Self.Tamtru" Multiplicity="1" />
-          <End Role="Thongtinnhankhau" Type="Self.Thongtinnhankhau" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Tamtru">
-              <PropertyRef Name="CMND" />
-            </Principal>
-            <Dependent Role="Thongtinnhankhau">
-              <PropertyRef Name="CMND" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="PBLModelStoreContainer">
           <EntitySet Name="Dangnhap" EntityType="Self.Dangnhap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DSHoKhau" EntityType="Self.DSHoKhau" Schema="dbo" store:Type="Tables" />
@@ -106,22 +92,26 @@
             <End Role="QHChuho" EntitySet="QHChuho" />
             <End Role="Thongtinnhankhau" EntitySet="Thongtinnhankhau" />
           </AssociationSet>
-          <AssociationSet Name="FK_Thongtinnhankhau_Tamtru1" Association="Self.FK_Thongtinnhankhau_Tamtru1">
-            <End Role="Tamtru" EntitySet="Tamtru" />
-            <End Role="Thongtinnhankhau" EntitySet="Thongtinnhankhau" />
-          </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PBLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dangnhap">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="PW" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nguoitruycap" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
         <EntityType Name="DSHoKhau">
           <Key>
             <PropertyRef Name="SoSHK" />
           </Key>
           <Property Name="SoSHK" Type="Int32" Nullable="false" />
           <Property Name="Chuho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Ghichu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Thongtinnhankhaus" Relationship="Self.FK_Thongtinnhankhau_DSHoKhau" FromRole="DSHoKhau" ToRole="Thongtinnhankhau" />
         </EntityType>
@@ -142,14 +132,13 @@
           <Property Name="Ghichu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Thoigiandichuyen" Type="DateTime" Precision="0" />
           <Property Name="CMND" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Thongtinnhankhau" Relationship="Self.FK_Thongtinnhankhau_Tamtru1" FromRole="Tamtru" ToRole="Thongtinnhankhau" />
         </EntityType>
         <EntityType Name="Thongtinnhankhau">
           <Key>
             <PropertyRef Name="CMND" />
           </Key>
           <Property Name="CMND" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="dob" Type="DateTime" Precision="0" />
           <Property Name="Gender" Type="Boolean" />
           <Property Name="Dantoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -159,10 +148,8 @@
           <Property Name="Diachi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NguyenQuan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IDtamtru" Type="Int32" />
           <NavigationProperty Name="DSHoKhau" Relationship="Self.FK_Thongtinnhankhau_DSHoKhau" FromRole="Thongtinnhankhau" ToRole="DSHoKhau" />
           <NavigationProperty Name="QHChuho" Relationship="Self.FK_Thongtinnhankhau_QHChuho" FromRole="Thongtinnhankhau" ToRole="QHChuho" />
-          <NavigationProperty Name="Tamtru" Relationship="Self.FK_Thongtinnhankhau_Tamtru1" FromRole="Thongtinnhankhau" ToRole="Tamtru" />
         </EntityType>
         <Association Name="FK_Thongtinnhankhau_DSHoKhau">
           <End Role="DSHoKhau" Type="Self.DSHoKhau" Multiplicity="0..1" />
@@ -188,19 +175,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Thongtinnhankhau_Tamtru1">
-          <End Role="Tamtru" Type="Self.Tamtru" Multiplicity="1" />
-          <End Role="Thongtinnhankhau" Type="Self.Thongtinnhankhau" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Tamtru">
-              <PropertyRef Name="CMND" />
-            </Principal>
-            <Dependent Role="Thongtinnhankhau">
-              <PropertyRef Name="CMND" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="PBLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dangnhaps" EntityType="Self.Dangnhap" />
           <EntitySet Name="DSHoKhaus" EntityType="Self.DSHoKhau" />
           <EntitySet Name="QHChuhoes" EntityType="Self.QHChuho" />
           <EntitySet Name="Tamtrus" EntityType="Self.Tamtru" />
@@ -213,32 +189,27 @@
             <End Role="QHChuho" EntitySet="QHChuhoes" />
             <End Role="Thongtinnhankhau" EntitySet="Thongtinnhankhaus" />
           </AssociationSet>
-          <AssociationSet Name="FK_Thongtinnhankhau_Tamtru1" Association="Self.FK_Thongtinnhankhau_Tamtru1">
-            <End Role="Tamtru" EntitySet="Tamtrus" />
-            <End Role="Thongtinnhankhau" EntitySet="Thongtinnhankhaus" />
-          </AssociationSet>
-          <EntitySet Name="Dangnhaps" EntityType="PBLModel.Dangnhap" />
         </EntityContainer>
-        <EntityType Name="Dangnhap">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="PW" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Nguoitruycap" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="PBLModelStoreContainer" CdmEntityContainer="PBLEntities">
+          <EntitySetMapping Name="Dangnhaps">
+            <EntityTypeMapping TypeName="PBLModel.Dangnhap">
+              <MappingFragment StoreEntitySet="Dangnhap">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PW" ColumnName="PW" />
+                <ScalarProperty Name="Nguoitruycap" ColumnName="Nguoitruycap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DSHoKhaus">
             <EntityTypeMapping TypeName="PBLModel.DSHoKhau">
               <MappingFragment StoreEntitySet="DSHoKhau">
                 <ScalarProperty Name="SoSHK" ColumnName="SoSHK" />
                 <ScalarProperty Name="Chuho" ColumnName="Chuho" />
-                <ScalarProperty Name="Diachi" ColumnName="Diachi" />
                 <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -276,16 +247,6 @@
                 <ScalarProperty Name="Diachi" ColumnName="Diachi" />
                 <ScalarProperty Name="NguyenQuan" ColumnName="NguyenQuan" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
-                <ScalarProperty Name="IDtamtru" ColumnName="IDtamtru" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Dangnhaps">
-            <EntityTypeMapping TypeName="PBLModel.Dangnhap">
-              <MappingFragment StoreEntitySet="Dangnhap">
-                <ScalarProperty Name="Nguoitruycap" ColumnName="Nguoitruycap" />
-                <ScalarProperty Name="PW" ColumnName="PW" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -21,5 +21,27 @@ namespace PBLnh2.BLL
             }
             private set { }
         }
+        public List<DSHoKhau> GetHKbySHK(int _id)
+        {
+            using (var context = new PBLEntities())
+            {
+                List<DSHoKhau> ls = (from r in context.DSHoKhaus where r.SoSHK == _id select r).ToList();
+                return ls;
+            }
+        }
+        public bool ThemSHK(DSHoKhau ds)
+        {
+            try
+            {
+                PBLEntities context = new PBLEntities();
+                context.DSHoKhaus.Add(ds);
+                context.SaveChanges();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
     }
 }
