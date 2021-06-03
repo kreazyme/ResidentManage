@@ -66,6 +66,14 @@ namespace PBLnh2
             this.label15 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtSDT = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.txtdate = new System.Windows.Forms.TextBox();
+            this.txtmonth = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,7 +135,7 @@ namespace PBLnh2
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.label6.Location = new System.Drawing.Point(378, 193);
+            this.label6.Location = new System.Drawing.Point(378, 194);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 25);
             this.label6.TabIndex = 6;
@@ -149,7 +157,7 @@ namespace PBLnh2
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.label8.Location = new System.Drawing.Point(378, 332);
+            this.label8.Location = new System.Drawing.Point(366, 332);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 25);
             this.label8.TabIndex = 9;
@@ -186,7 +194,7 @@ namespace PBLnh2
             this.txtCMND.Location = new System.Drawing.Point(203, 194);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.ReadOnly = true;
-            this.txtCMND.Size = new System.Drawing.Size(169, 27);
+            this.txtCMND.Size = new System.Drawing.Size(157, 27);
             this.txtCMND.TabIndex = 12;
             // 
             // txtDantoc
@@ -210,7 +218,7 @@ namespace PBLnh2
             this.txtJob.Location = new System.Drawing.Point(220, 328);
             this.txtJob.Name = "txtJob";
             this.txtJob.ReadOnly = true;
-            this.txtJob.Size = new System.Drawing.Size(152, 27);
+            this.txtJob.Size = new System.Drawing.Size(140, 27);
             this.txtJob.TabIndex = 14;
             // 
             // txtSHK
@@ -263,6 +271,7 @@ namespace PBLnh2
             this.btnView.TabIndex = 18;
             this.btnView.Text = "Xem người thân";
             this.btnView.UseVisualStyleBackColor = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // btnDel
             // 
@@ -322,6 +331,7 @@ namespace PBLnh2
             this.label12.Size = new System.Drawing.Size(190, 32);
             this.label12.TabIndex = 24;
             this.label12.Text = "Chỉnh sửa ngay";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -371,7 +381,7 @@ namespace PBLnh2
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.panel3.Location = new System.Drawing.Point(203, 355);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(169, 2);
+            this.panel3.Size = new System.Drawing.Size(157, 2);
             this.panel3.TabIndex = 29;
             // 
             // panel4
@@ -379,7 +389,7 @@ namespace PBLnh2
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.panel4.Location = new System.Drawing.Point(190, 220);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(182, 2);
+            this.panel4.Size = new System.Drawing.Size(170, 2);
             this.panel4.TabIndex = 29;
             // 
             // panel5
@@ -427,7 +437,7 @@ namespace PBLnh2
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.label15.Location = new System.Drawing.Point(356, 260);
+            this.label15.Location = new System.Drawing.Point(360, 260);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(125, 25);
             this.label15.TabIndex = 30;
@@ -453,12 +463,102 @@ namespace PBLnh2
             this.txtSDT.Size = new System.Drawing.Size(110, 27);
             this.txtSDT.TabIndex = 29;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label16.Location = new System.Drawing.Point(220, 259);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(20, 25);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "/";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label17.Location = new System.Drawing.Point(268, 260);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(20, 25);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "/";
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel11.Location = new System.Drawing.Point(187, 283);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(32, 2);
+            this.panel11.TabIndex = 30;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel12.Location = new System.Drawing.Point(237, 283);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(29, 2);
+            this.panel12.TabIndex = 31;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel13.Location = new System.Drawing.Point(290, 283);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(52, 2);
+            this.panel13.TabIndex = 33;
+            // 
+            // txtdate
+            // 
+            this.txtdate.BackColor = System.Drawing.Color.White;
+            this.txtdate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtdate.Location = new System.Drawing.Point(190, 255);
+            this.txtdate.Name = "txtdate";
+            this.txtdate.ReadOnly = true;
+            this.txtdate.Size = new System.Drawing.Size(30, 27);
+            this.txtdate.TabIndex = 34;
+            // 
+            // txtmonth
+            // 
+            this.txtmonth.BackColor = System.Drawing.Color.White;
+            this.txtmonth.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtmonth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtmonth.Location = new System.Drawing.Point(237, 255);
+            this.txtmonth.Name = "txtmonth";
+            this.txtmonth.ReadOnly = true;
+            this.txtmonth.Size = new System.Drawing.Size(26, 27);
+            this.txtmonth.TabIndex = 35;
+            // 
+            // txtYear
+            // 
+            this.txtYear.BackColor = System.Drawing.Color.White;
+            this.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtYear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.txtYear.Location = new System.Drawing.Point(292, 255);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.ReadOnly = true;
+            this.txtYear.Size = new System.Drawing.Size(50, 27);
+            this.txtYear.TabIndex = 36;
+            // 
             // ViewPersion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(710, 755);
+            this.Controls.Add(this.txtYear);
+            this.Controls.Add(this.txtmonth);
+            this.Controls.Add(this.txtdate);
+            this.Controls.Add(this.panel13);
+            this.Controls.Add(this.panel12);
+            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.label15);
@@ -543,5 +643,13 @@ namespace PBLnh2
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.TextBox txtdate;
+        private System.Windows.Forms.TextBox txtmonth;
+        private System.Windows.Forms.TextBox txtYear;
     }
 }

@@ -63,6 +63,7 @@ namespace PBLnh2
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone_Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panMenu.SuspendLayout();
             this.panSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -161,6 +162,7 @@ namespace PBLnh2
             this.butSearchFamily.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butSearchFamily.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.butSearchFamily.UseVisualStyleBackColor = false;
+            this.butSearchFamily.Click += new System.EventHandler(this.butSearchFamily_Click);
             // 
             // btnSearchCMND
             // 
@@ -537,12 +539,25 @@ namespace PBLnh2
             this.Address.ReadOnly = true;
             this.Address.Width = 135;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.label2.Location = new System.Drawing.Point(1184, 638);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Refresh";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1252, 683);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dtgv);
             this.Controls.Add(this.panelText);
             this.Controls.Add(this.panMenu);
@@ -562,6 +577,7 @@ namespace PBLnh2
             this.panelText.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -595,5 +611,6 @@ namespace PBLnh2
         private System.Windows.Forms.DataGridViewTextBoxColumn Age;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone_Num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -52,12 +52,13 @@ namespace PBLnh2.BLL
             PBLEntities context = new PBLEntities();
             return context.Thongtinnhankhaus.ToList();
         }
-        public static List<Thongtinnhankhau> GetNKbyChuho(string m)
+
+        public static List<Thongtinnhankhau> GetNKbySHK(string m)
         {
-            int _idChuho = Convert.ToInt32(m);
+            int _SHK = Convert.ToInt32(m);
             using (var context = new PBLEntities())
             {
-                List<Thongtinnhankhau> ls = (from r in context.Thongtinnhankhaus where r.IDQuanhe == _idChuho select r).ToList();
+                List<Thongtinnhankhau> ls = (from r in context.Thongtinnhankhaus where r.SoSHK == _SHK select r).ToList();
                 return ls;
             }
         }
@@ -100,6 +101,16 @@ namespace PBLnh2.BLL
             context.Thongtinnhankhaus.Remove(nk);
             BLL_Tamtru.Instance.DelTamtru(cmnd);
             context.SaveChanges();
+        }
+        public static bool CheckCMND(int _cmnd)
+        {
+            PBLEntities context = new PBLEntities();
+            Thongtinnhankhau nk = context.Thongtinnhankhaus.Find(_cmnd);
+            if (nk == null)
+            {
+                return false;
+            }
+            else return true;
         }
     }
 }

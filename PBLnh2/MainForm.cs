@@ -13,6 +13,7 @@ namespace PBLnh2
     public partial class MainForm : Form
     {
         private Button currentBut;
+        //private string temp;
 
         public MainForm()
         {
@@ -20,7 +21,12 @@ namespace PBLnh2
             CustomizeDes();
             Resettxt();
             Createdb();
+            //Sender = new SendMessage(GetMessage);
         }
+        //private void GetMessage(string m)
+        //{
+        //    temp = m;
+        //}
         private void Resettxt()
         {
             txtSearchContext.Text = "Nhập để tìm kiếm";
@@ -30,6 +36,7 @@ namespace PBLnh2
         }
         private void Createdb()
         {
+            dtgv.Rows.Clear();
             string Gioitinh = string.Empty;
             foreach(Thongtinnhankhau i in BLL.BLL_Thongtinhankhau.GetThongtinnhankhaus())
             {
@@ -145,12 +152,25 @@ namespace PBLnh2
         {
             ActiveBut(sender);
             Dispanel();
+            ViewPersion f = new ViewPersion("them");
+            f.Show();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             ActiveBut(sender);
             Dispanel();
+            if (dtgv.SelectedRows.Count > 0)
+            {
+                int index = dtgv.CurrentCell.RowIndex;
+                int _cmnd = Convert.ToInt32(dtgv.Rows[index].Cells[0].Value.ToString());
+                Relative frm = new Relative(_cmnd.ToString());
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn người dân muốn chỉnh sửa thông tin", "Thông báo");
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -213,7 +233,19 @@ namespace PBLnh2
         {
             int _cmnd = Convert.ToInt32(dtgv.Rows[dtgv.CurrentCell.RowIndex].Cells[0].Value.ToString());
             ViewPersion f = new ViewPersion(_cmnd.ToString());
+            f.Sender = new ViewPersion.SendMessage(Createdb);
             f.Show();
+        }
+
+        private void butSearchFamily_Click(object sender, EventArgs e)
+        {
+            ActiveBut(sender);
+            Dispanel();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Createdb();
         }
     }
 }
