@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PBLnh2.DAL;
 using System.Threading.Tasks;
 
 namespace PBLnh2.BLL

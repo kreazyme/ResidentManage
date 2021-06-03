@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PBLnh2
+namespace PBLnh2.DAL
 {
     using System;
     using System.Collections.Generic;

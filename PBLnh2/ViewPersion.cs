@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using PBLnh2.DAL;
 using System.Data;
 using System.Drawing;
 using System.Linq;

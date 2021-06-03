@@ -60,25 +60,25 @@
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_Tamtru.cs" />
     <Compile Include="BLL\BLL_Thongtinhankhau.cs" />
-    <Compile Include="Dangnhap.cs">
+    <Compile Include="DAL\Dangnhap.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
-    <Compile Include="data.Context.cs">
+    <Compile Include="DAL\data.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>data.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="data.cs">
+    <Compile Include="DAL\data.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
-    <Compile Include="data.Designer.cs">
+    <Compile Include="DAL\data.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>data.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DSHoKhau.cs">
+    <Compile Include="DAL\DSHoKhau.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -101,7 +101,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QHChuho.cs">
+    <Compile Include="DAL\QHChuho.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
     <Compile Include="Relative.cs">
@@ -110,10 +110,10 @@
     <Compile Include="Relative.Designer.cs">
       <DependentUpon>Relative.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tamtru.cs">
+    <Compile Include="DAL\Tamtru.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
-    <Compile Include="Thongtinnhankhau.cs">
+    <Compile Include="DAL\Thongtinnhankhau.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewPersion.cs">
@@ -147,11 +147,11 @@
     <EmbeddedResource Include="ViewPersion.resx">
       <DependentUpon>ViewPersion.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="data.edmx">
+    <EntityDeploy Include="DAL\data.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>data.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="data.edmx.diagram">
+    <None Include="DAL\data.edmx.diagram">
       <DependentUpon>data.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -235,16 +235,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\" />
     <Folder Include="DTO\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="data.Context.tt">
+    <Content Include="DAL\data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>data.edmx</DependentUpon>
       <LastGenOutput>data.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="data.tt">
+    <Content Include="DAL\data.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>data.edmx</DependentUpon>
       <LastGenOutput>data.cs</LastGenOutput>

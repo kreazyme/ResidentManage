@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PBLnh2.DAL;
 using PBLnh2.BLL;
 using System.Data.Entity;
 //using System.Data.

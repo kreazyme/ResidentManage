@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PBLnh2.DAL;
 
 namespace PBLnh2.BLL
 {
@@ -26,7 +27,7 @@ namespace PBLnh2.BLL
             PBLEntities context = new PBLEntities();
             return context.QHChuhoes.Find(m).TenQuanhe;
         }
-        public void AddQH(QHChuho qh)
+        public void AddQH(DAL.QHChuho qh)
         {
             PBLEntities context = new PBLEntities();
             context.QHChuhoes.Add(qh);
