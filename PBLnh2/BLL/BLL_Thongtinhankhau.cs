@@ -48,13 +48,13 @@ namespace PBLnh2.BLL
                 return false;
             }
         }
-        public static List<Thongtinnhankhau> GetThongtinnhankhaus()
+        public  List<Thongtinnhankhau> GetThongtinnhankhaus()
         {
             PBLEntities context = new PBLEntities();
             return context.Thongtinnhankhaus.ToList();
         }
 
-        public static List<Thongtinnhankhau> GetNKbySHK(string m)
+        public  List<Thongtinnhankhau> GetNKbySHK(string m)
         {
             int _SHK = Convert.ToInt32(m);
             using (var context = new PBLEntities())
@@ -63,13 +63,21 @@ namespace PBLnh2.BLL
                 return ls;
             }
         }
-        public static List<Thongtinnhankhau> GetNKbyTen(string m)
+        public  List<Thongtinnhankhau> ListChuho()
+        {
+            using (var context = new PBLEntities())
+            {
+                List<Thongtinnhankhau> ls = (from r in context.Thongtinnhankhaus where r.IDQuanhe == 1 select r).ToList();
+                return ls;
+            }
+        }
+        public  List<Thongtinnhankhau> GetNKbyTen(string m)
         {
             PBLEntities context = new PBLEntities();
             List<Thongtinnhankhau> ls =  context.Thongtinnhankhaus.Where(r => r.Name.Contains(m)).ToList();
             return ls;
         }
-        public static bool UpdateNK(Thongtinnhankhau nk)
+        public  bool UpdateNK(Thongtinnhankhau nk)
         {
             try
             {
@@ -103,7 +111,7 @@ namespace PBLnh2.BLL
             BLL_Tamtru.Instance.DelTamtru(cmnd);
             context.SaveChanges();
         }
-        public static bool CheckCMND(int _cmnd)
+        public  bool CheckCMND(int _cmnd)
         {
             PBLEntities context = new PBLEntities();
             Thongtinnhankhau nk = context.Thongtinnhankhaus.Find(_cmnd);
@@ -112,6 +120,27 @@ namespace PBLnh2.BLL
                 return false;
             }
             else return true;
+        }
+        public List<Thongtinnhankhau> SortbyCMND()
+        {
+            using(var context = new PBLEntities())
+            {
+                return ((from r in context.Thongtinnhankhaus orderby r.CMND select r).ToList());
+            }
+        }
+        public List<Thongtinnhankhau> SortbyAge()
+        {
+            using (var context = new PBLEntities())
+            {
+                return ((from r in context.Thongtinnhankhaus orderby r.dob.Value.Year select r).ToList());
+            }
+        }
+        public List<Thongtinnhankhau> SortbyName()
+        {
+            using (var context = new PBLEntities())
+            {
+                return ((from r in context.Thongtinnhankhaus orderby r.Name select r).ToList());
+            }
         }
     }
 }

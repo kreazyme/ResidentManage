@@ -67,7 +67,7 @@ namespace PBLnh2
             dn.ID = Convert.ToInt32(txtID.Text.Trim());
             dn.PW = txtpw.Text.Trim();
             dn.Nguoitruycap = "1";
-            if(BLL.BLL_Login.AddUser(dn) == true)
+            if(BLL.BLL_Login.Instance.AddUser(dn) == true)
             {
                 MessageBox.Show("Đã tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

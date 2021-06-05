@@ -28,13 +28,13 @@ namespace PBLnh2.BLL
             PBLEntities context = new PBLEntities();
             return context.Tamtrus.Find(_id);
         }
-        public static void AddTamtru(Tamtru tt)
+        public void AddTamtru(Tamtru tt)
         {
             PBLEntities context = new PBLEntities();
             context.Tamtrus.Add(tt);
             context.SaveChanges();
         }
-        public static void UpdateTamtru(Tamtru tt)
+        public void UpdateTamtru(Tamtru tt)
         {
             PBLEntities context = new PBLEntities();
             Tamtru temp = context.Tamtrus.Find(tt.CMND);

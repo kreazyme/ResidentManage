@@ -22,7 +22,7 @@ namespace PBLnh2.BLL
             }
             private set { }
         }
-        public static Dangnhap GetUserbyID(string text)
+        public Dangnhap GetUserbyID(string text)
         {
             int _id = Convert.ToInt32(text);
             using (var context = new PBLEntities())
@@ -31,7 +31,7 @@ namespace PBLnh2.BLL
                 return Userr;
             }
         }
-        public static bool AddUser(Dangnhap dn)
+        public bool AddUser(Dangnhap dn)
         {
             try
             {

@@ -119,45 +119,49 @@ namespace PBLnh2
             {
                 if (txtCMND.Text == string.Empty)
                 {
-                    MessageBox.Show("Bạn chưa nhập số CMND");
+                    MessageBox.Show("Bạn chưa nhập số CMND", "Thông báo");
                     txtCMND.Focus();
                     return;
                 }
                 if (txtDantoc.Text == string.Empty)
                 {
-                    MessageBox.Show("Bạn chưa nhập dân tộc");
+                    MessageBox.Show("Bạn chưa nhập dân tộc", "Thông báo");
                     txtDantoc.Focus();
                     return;
                 }
                 if (txtGender.Text == string.Empty)
                 {
-                    MessageBox.Show("Bạn chưa nhập giới tính");
+                    MessageBox.Show("Bạn chưa nhập giới tính", "Thông báo");
                     txtGender.Focus();
                     return;
                 }
                 if (txtGender.Text != "Nam" && txtGender.Text != "Nữ")
                 {
-                    MessageBox.Show("Giới tính không phù hợp");
+                    MessageBox.Show("Giới tính không phù hợp", "Thông báo");
                     txtGender.Focus();
                     return;
                 }
                 if (txtName.Text == string.Empty)
                 {
-                    MessageBox.Show("Bạn chưa nhập họ và tên");
+                    MessageBox.Show("Bạn chưa nhập họ và tên", "Thông báo");
                     txtName.Focus();
                     return;
                 }
                 if (txtmonth.Text == string.Empty || txtdate.Text == string.Empty || txtYear.Text == string.Empty)
                 {
                     txtdate.Focus();
-                    MessageBox.Show("Bạn chưa ngày tháng năm sinh");
+                    MessageBox.Show("Bạn chưa ngày tháng năm sinh", "Thông báo");
                     return;
                 }
                 if (txtSHK.Text == string.Empty)
                 {
                     txtSHK.Focus();
-                    MessageBox.Show("Bạn chưa nhập số Hộ khẩu");
+                    MessageBox.Show("Bạn chưa nhập số Hộ khẩu", "Thông báo");
                     return;
+                }
+                if(txtSDT.Text.Length != 10)
+                {
+                    MessageBox.Show("Bạn chưa đúng số điện thoại!", "Thông báo");
                 }
                 if (txtAdd.Text == string.Empty)
                 {
@@ -166,14 +170,43 @@ namespace PBLnh2
                     return;
                 }
                 Thongtinnhankhau tn = new Thongtinnhankhau();
-                tn.CMND = Convert.ToInt32(txtCMND.Text);
+                try
+                {
+                    tn.CMND = Convert.ToInt32(txtCMND.Text);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Bạn chưa nhập đúng số CMND", "Thông báo");
+                    txtCMND.Focus();
+                    return;
+                }
                 tn.Dantoc = txtDantoc.Text;
                 tn.Diachi = txtAdd.Text;
                 tn.Name = txtName.Text;
-                tn.SoSHK = Convert.ToInt32(txtSHK.Text);
+                try
+                {
+                    tn.SoSHK = Convert.ToInt32(txtSHK.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Bạn chưa nhập đúng số SHK", "Thông báo");
+                    txtSHK.Focus();
+                    return;
+                }
                 tn.NgheNghiep = txtJob.Text;
                 tn.NguyenQuan = txtQQ.Text;
                 tn.SDT = txtSDT.Text;
+                try
+                {
+                    int tempp = Convert.ToInt32(tn.SDT);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Bạn chưa nhập đúng SDT", "Thông báo");
+                    txtSDT.Focus();
+                    tn.SDT = string.Empty;
+                    return;
+                }
 
                 try
                 {
@@ -182,7 +215,7 @@ namespace PBLnh2
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Bạn chưa nhập đúng ngày tháng năm sinh");
+                    MessageBox.Show("Bạn chưa nhập đúng ngày tháng năm sinh", "Thông báo");
                     txtdate.Focus();
                     return;
                 }
@@ -192,11 +225,11 @@ namespace PBLnh2
                 }
                 else tn.Gender = false;
 
-               if(BLL.BLL_Thongtinhankhau.CheckCMND(tn.CMND) == false)
+               if(BLL.BLL_Thongtinhankhau.Instance.CheckCMND(tn.CMND) == false)
                 {
                     if (BLL.BLL_Thongtinhankhau.AddNhankhau(tn) == true)
                     {
-                        MessageBox.Show("Đã thêm thành công " + tn.Name + " vào cơ sở dữ liệu!", "Thông báo");
+                        MessageBox.Show("Đã cập nhật thành công " + tn.Name + " vào cơ sở dữ liệu!", "Thông báo");
                         this.Close();
                     }
                     else
@@ -207,7 +240,7 @@ namespace PBLnh2
                 }
                 else
                 {
-                    if(BLL.BLL_Thongtinhankhau.UpdateNK(tn) == true)
+                    if(BLL.BLL_Thongtinhankhau.Instance.UpdateNK(tn) == true)
                     {
                         MessageBox.Show("Đã thêm thành công " + tn.Name + " vào cơ sở dữ liệu!", "Thông báo");
                         this.Close();
@@ -229,6 +262,7 @@ namespace PBLnh2
         private void label12_Click(object sender, EventArgs e)
         {
             Editmode = true;
+            label12.Text = "Lưu chỉnh sửa";
             txtAdd.ReadOnly = false;
             txtCMND.ReadOnly = false;
             txtDantoc.ReadOnly = false;
@@ -241,6 +275,16 @@ namespace PBLnh2
             txtSDT.ReadOnly = false;
             txtSHK.ReadOnly = false;
             txtYear.ReadOnly = false;
+        }
+
+        private void txtCMND_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtdate_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -196,6 +196,7 @@ namespace PBLnh2
             this.txtCMND.ReadOnly = true;
             this.txtCMND.Size = new System.Drawing.Size(157, 27);
             this.txtCMND.TabIndex = 12;
+            this.txtCMND.TextChanged += new System.EventHandler(this.txtCMND_TextChanged);
             // 
             // txtDantoc
             // 
@@ -520,6 +521,7 @@ namespace PBLnh2
             this.txtdate.ReadOnly = true;
             this.txtdate.Size = new System.Drawing.Size(30, 27);
             this.txtdate.TabIndex = 34;
+            this.txtdate.TextChanged += new System.EventHandler(this.txtdate_TextChanged);
             // 
             // txtmonth
             // 

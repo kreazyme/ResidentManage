@@ -88,7 +88,7 @@ namespace PBLnh2
             this.panMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panMenu.Location = new System.Drawing.Point(0, 0);
             this.panMenu.Name = "panMenu";
-            this.panMenu.Size = new System.Drawing.Size(277, 683);
+            this.panMenu.Size = new System.Drawing.Size(277, 740);
             this.panMenu.TabIndex = 0;
             // 
             // panSearch
@@ -337,7 +337,7 @@ namespace PBLnh2
             this.btnSortCMND.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnSortCMND.Size = new System.Drawing.Size(256, 65);
             this.btnSortCMND.TabIndex = 3;
-            this.btnSortCMND.Text = "  CMND";
+            this.btnSortCMND.Text = "  Số CMND";
             this.btnSortCMND.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSortCMND.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSortCMND.UseVisualStyleBackColor = false;
@@ -413,7 +413,7 @@ namespace PBLnh2
             this.panelText.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelText.Location = new System.Drawing.Point(277, 0);
             this.panelText.Name = "panelText";
-            this.panelText.Size = new System.Drawing.Size(975, 103);
+            this.panelText.Size = new System.Drawing.Size(1000, 103);
             this.panelText.TabIndex = 1;
             // 
             // label1
@@ -487,7 +487,7 @@ namespace PBLnh2
             this.dtgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgv.RowTemplate.Height = 24;
             this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgv.Size = new System.Drawing.Size(975, 580);
+            this.dtgv.Size = new System.Drawing.Size(1000, 637);
             this.dtgv.TabIndex = 2;
             this.dtgv.DoubleClick += new System.EventHandler(this.dtgv_DoubleClick);
             // 
@@ -556,7 +556,7 @@ namespace PBLnh2
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1252, 683);
+            this.ClientSize = new System.Drawing.Size(1277, 740);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtgv);
             this.Controls.Add(this.panelText);

@@ -37,7 +37,7 @@ namespace PBLnh2
 
         private bool CheckLogin()
         {
-            Dangnhap login = BLL_Login.GetUserbyID(txtID.Text);
+            Dangnhap login = BLL_Login.Instance.GetUserbyID(txtID.Text);
             if (login == null)
                 return false;
             if (login.PW.Trim() == txtpw.Text)

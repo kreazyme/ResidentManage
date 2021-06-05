@@ -30,7 +30,7 @@ namespace PBLnh2
         {
             _SHK = Convert.ToInt32(BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd).SoSHK);
             int n = Convert.ToInt32(BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd).IDQuanhe);
-            foreach (Thongtinnhankhau i in BLL.BLL_Thongtinhankhau.GetNKbySHK(_SHK.ToString()))
+            foreach (Thongtinnhankhau i in BLL.BLL_Thongtinhankhau.Instance.GetNKbySHK(_SHK.ToString()))
             {
                 string QHChuho = BLL.BLL_Chuho.Instance.GetQhbyID(n);
                 string _gender = "Nam";
@@ -55,7 +55,7 @@ namespace PBLnh2
         {
             int m =0;
             string _name = dtgv.Rows[dtgv.CurrentCell.RowIndex].Cells[0].Value.ToString();
-            foreach(Thongtinnhankhau i in BLL.BLL_Thongtinhankhau.GetNKbySHK(_SHK.ToString()))
+            foreach(Thongtinnhankhau i in BLL.BLL_Thongtinhankhau.Instance.GetNKbySHK(_SHK.ToString()))
             {
                 if(i.Name == _name)
                 {
