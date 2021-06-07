@@ -25,12 +25,13 @@ namespace PBLnh2
         }
         public ViewPersion(string str) : this()
         {
-            _cmnd = str;
-            if(_cmnd == "them")
+            _cmnd = str.Substring(str.Length -4, 4);
+            if(_cmnd.Substring(0,4) == "them")
             {
                 Editmode = true;
                 txtAdd.ReadOnly = false;
                 txtCMND.ReadOnly = false;
+                txtQH.ReadOnly = false;
                 txtDantoc.ReadOnly = false;
                 txtdate.ReadOnly = false;
                 txtGender.ReadOnly = false;
@@ -57,6 +58,7 @@ namespace PBLnh2
                 Thongtinnhankhau tn = BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd);
                 txtCMND.Text = _cmnd.ToString();
                 txtAdd.Text = tn.Diachi;
+                txtQH.Text = CheckQHchuho(Convert.ToInt32(tn.IDQuanhe));
                 txtDantoc.Text = tn.Dantoc;
                 if (tn.Gender == false)
                 {
@@ -112,11 +114,30 @@ namespace PBLnh2
                 return;
             }
         }
+        private string CheckQHchuho(int _idqh)
+        {
+            if (_idqh > 7 || _idqh < 1)
+            {
+                return "Khác";
+            }
+            else
+            {
+                return BLL.BLL_Chuho.Instance.GetQhbyID(_idqh);
+
+            }
+        }
 
         private void btnView_Click(object sender, EventArgs e)
         {
             if(Editmode == true)
             {
+                if(txtQH.Text == string.Empty)
+                {
+                    MessageBox.Show("Bạn chưa nhập quan hệ với chủ hộ", "Thông báo");
+                    txtQH.Focus();
+                    return;
+                }
+
                 if (txtCMND.Text == string.Empty)
                 {
                     MessageBox.Show("Bạn chưa nhập số CMND", "Thông báo");
@@ -183,6 +204,9 @@ namespace PBLnh2
                 tn.Dantoc = txtDantoc.Text;
                 tn.Diachi = txtAdd.Text;
                 tn.Name = txtName.Text;
+                
+                tn.IDQuanhe = BLL.BLL_Chuho.Instance.GetIDbyName(txtQH.Text);
+                MessageBox.Show(tn.IDQuanhe.ToString());
                 try
                 {
                     tn.SoSHK = Convert.ToInt32(txtSHK.Text);
@@ -207,7 +231,6 @@ namespace PBLnh2
                     tn.SDT = string.Empty;
                     return;
                 }
-
                 try
                 {
                     DateTime dt = new DateTime(Convert.ToInt32(txtYear.Text), Convert.ToInt32(txtmonth.Text), Convert.ToInt32(txtdate.Text));
@@ -262,11 +285,12 @@ namespace PBLnh2
         private void label12_Click(object sender, EventArgs e)
         {
             Editmode = true;
-            label12.Text = "Lưu chỉnh sửa";
+            btnView.Text = "Lưu chỉnh sửa";
             txtAdd.ReadOnly = false;
             txtCMND.ReadOnly = false;
             txtDantoc.ReadOnly = false;
             txtdate.ReadOnly = false;
+            txtQH.ReadOnly = false;
             txtGender.ReadOnly = false;
             txtJob.ReadOnly = false;
             txtmonth.ReadOnly = false;
@@ -283,6 +307,11 @@ namespace PBLnh2
         }
 
         private void txtdate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewPersion_Load(object sender, EventArgs e)
         {
 
         }

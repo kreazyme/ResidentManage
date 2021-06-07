@@ -132,7 +132,7 @@ namespace PBLnh2
             this.txtSearchContext.BackColor = System.Drawing.Color.White;
             this.txtSearchContext.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchContext.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtSearchContext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchContext.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchContext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.txtSearchContext.Location = new System.Drawing.Point(60, 195);
             this.txtSearchContext.Multiline = true;
@@ -421,7 +421,7 @@ namespace PBLnh2
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(280, 32);
+            this.label1.Location = new System.Drawing.Point(297, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(389, 41);
             this.label1.TabIndex = 0;
@@ -544,7 +544,7 @@ namespace PBLnh2
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.label2.Location = new System.Drawing.Point(1184, 638);
+            this.label2.Location = new System.Drawing.Point(1209, 673);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 23);
             this.label2.TabIndex = 1;
@@ -566,6 +566,8 @@ namespace PBLnh2
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.panMenu.ResumeLayout(false);
             this.panSearch.ResumeLayout(false);
             this.panSearch.PerformLayout();

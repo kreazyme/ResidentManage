@@ -62,9 +62,10 @@ namespace PBLnh2
             }
             if(CheckLogin())
             {
-                MainForm f = new MainForm();
-                f.Show();
+
+                MainForm f = new MainForm(this);
                 this.Hide();
+                f.Show();
             }
             else
             {

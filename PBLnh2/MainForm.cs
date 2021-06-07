@@ -14,20 +14,22 @@ namespace PBLnh2
     public partial class MainForm : Form
     {
         private Button currentBut;
-        //private string temp;
-
+        public MainForm(Login lg)
+        {
+            InitializeComponent();
+            CustomizeDes();
+            Resettxt();
+            Createdb();
+            _login = lg;
+        }
+        private Login _login;
         public MainForm()
         {
             InitializeComponent();
             CustomizeDes();
             Resettxt();
             Createdb();
-            //Sender = new SendMessage(GetMessage);
         }
-        //private void GetMessage(string m)
-        //{
-        //    temp = m;
-        //}
         private void Resettxt()
         {
             txtSearchContext.Text = "Nhập để tìm kiếm";
@@ -194,7 +196,7 @@ namespace PBLnh2
             {
                 int index = dtgv.CurrentCell.RowIndex;
                 int _cmnd = Convert.ToInt32(dtgv.Rows[index].Cells[0].Value.ToString());
-                ViewPersion frm = new ViewPersion(_cmnd.ToString());
+                ViewPersion frm = new ViewPersion("them" + _cmnd.ToString());
                 frm.Show();
             }
             else
@@ -333,6 +335,17 @@ namespace PBLnh2
         private void label2_Click(object sender, EventArgs e)
         {
             Createdb();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //_login.Show();
+            //this.Close();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //_login.ShowDialog();
         }
     }
 }

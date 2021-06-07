@@ -22,16 +22,38 @@ namespace PBLnh2.BLL
             }
             private set { }
         }
+        
         public string GetQhbyID(int m)
         {
-            PBLEntities context = new PBLEntities();
-            return context.QHChuhoes.Find(m).TenQuanhe;
+            using (var context = new PBLEntities())
+            {
+                return (from r in context.QHChuhoes where r.IDQuanhe == m select r.TenQuanhe).FirstOrDefault();
+            }
         }
-        public void AddQH(DAL.QHChuho qh)
+        public int GetIDbyName(string m)
         {
-            PBLEntities context = new PBLEntities();
-            context.QHChuhoes.Add(qh);
-            context.SaveChanges();
+            int _idqh;
+            using(var context = new PBLEntities())
+            {
+                _idqh = (from r in context.QHChuhoes where r.TenQuanhe == m select r.IDQuanhe).First();
+            }
+            if(_idqh == null)
+            {
+                using (var context = new PBLEntities())
+                {
+                    _idqh = (from r in context.QHChuhoes orderby r.IDQuanhe descending select r.IDQuanhe).First();
+                }
+                PBLEntities contet = new PBLEntities();
+                QHChuho qh = new QHChuho();
+                qh.IDQuanhe = _idqh + 1;
+                qh.TenQuanhe = m;
+                contet.QHChuhoes.Add(qh);
+                return _idqh + 1;
+            }
+            else
+            {
+                return _idqh;
+            }
         }
     }
 }
