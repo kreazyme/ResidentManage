@@ -25,25 +25,41 @@ namespace PBLnh2
         }
         public ViewPersion(string str) : this()
         {
-            _cmnd = str.Substring(str.Length -4, 4);
-            if(_cmnd.Substring(0,4) == "them")
+            _cmnd = str;
+            if (str.Length == 4)
             {
-                Editmode = true;
-                txtAdd.ReadOnly = false;
-                txtCMND.ReadOnly = false;
-                txtQH.ReadOnly = false;
-                txtDantoc.ReadOnly = false;
-                txtdate.ReadOnly = false;
-                txtGender.ReadOnly = false;
-                txtJob.ReadOnly = false;
-                txtmonth.ReadOnly = false;
-                txtName.ReadOnly = false;
-                txtQQ.ReadOnly = false;
-                txtSDT.ReadOnly = false;
-                txtSHK.ReadOnly = false;
-                txtYear.ReadOnly = false;
+                ActiEdit();
+                return;
             }
+            if(str.Substring(0, 4) == "them")
+            {
+                _cmnd = str.Substring(4, str.Length - 4);
+                LoadDB();
+                ActiEdit();
+                return;
+            }
+
             LoadDB();
+        }
+        private void ActiEdit()
+        {
+            btnView.Text = "Lưu chỉnh sửa";
+            btnDel.ForeColor = System.Drawing.Color.Silver;
+            btnDel.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+           Editmode = true;
+            txtAdd.ReadOnly = false;
+            txtCMND.ReadOnly = false;
+            txtQH.ReadOnly = false;
+            txtDantoc.ReadOnly = false;
+            txtdate.ReadOnly = false;
+            txtGender.ReadOnly = false;
+            txtJob.ReadOnly = false;
+            txtmonth.ReadOnly = false;
+            txtName.ReadOnly = false;
+            txtQQ.ReadOnly = false;
+            txtSDT.ReadOnly = false;
+            txtSHK.ReadOnly = false;
+            txtYear.ReadOnly = false;
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -56,9 +72,10 @@ namespace PBLnh2
             if(Editmode == false)
             {
                 Thongtinnhankhau tn = BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd);
+
                 txtCMND.Text = _cmnd.ToString();
                 txtAdd.Text = tn.Diachi;
-                txtQH.Text = CheckQHchuho(Convert.ToInt32(tn.IDQuanhe));
+                txtQH.Text = BLL.BLL_Chuho.Instance.GetQhbyID(Convert.ToInt32(tn.IDQuanhe));
                 txtDantoc.Text = tn.Dantoc;
                 if (tn.Gender == false)
                 {
@@ -70,6 +87,7 @@ namespace PBLnh2
                 }
                 txtJob.Text = tn.NgheNghiep;
                 txtName.Text = tn.Name;
+                
                 txtQQ.Text = tn.NguyenQuan;
                 txtSHK.Text = tn.SoSHK.ToString();
                 txtSDT.Text = tn.SDT;
@@ -93,7 +111,12 @@ namespace PBLnh2
         {
             if(Editmode == false)
             {
-                string str = BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd).Name;
+                Thongtinnhankhau tn = BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd);
+                string str =tn.Name;
+                if (BLL.BLL_Thongtinhankhau.Instance.CounNK(Convert.ToInt32(tn.SoSHK)) == 1);
+                {
+                    str = "hộ gia đình " + str;
+                }
                 DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xoá " + str + " ra khỏi cơ sở dữ liệu ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlr == DialogResult.Yes)
                 {
@@ -105,7 +128,7 @@ namespace PBLnh2
                 }
                 else
                 {
-                    MessageBox.Show("Không xoá", "Thông báo");
+                    MessageBox.Show("Bạn đã huỷ lệnh xoá", "Thông báo");
                     return;
                 }
             }
@@ -114,19 +137,6 @@ namespace PBLnh2
                 return;
             }
         }
-        private string CheckQHchuho(int _idqh)
-        {
-            if (_idqh > 7 || _idqh < 1)
-            {
-                return "Khác";
-            }
-            else
-            {
-                return BLL.BLL_Chuho.Instance.GetQhbyID(_idqh);
-
-            }
-        }
-
         private void btnView_Click(object sender, EventArgs e)
         {
             if(Editmode == true)
@@ -137,7 +147,6 @@ namespace PBLnh2
                     txtQH.Focus();
                     return;
                 }
-
                 if (txtCMND.Text == string.Empty)
                 {
                     MessageBox.Show("Bạn chưa nhập số CMND", "Thông báo");
@@ -180,10 +189,6 @@ namespace PBLnh2
                     MessageBox.Show("Bạn chưa nhập số Hộ khẩu", "Thông báo");
                     return;
                 }
-                if(txtSDT.Text.Length != 10)
-                {
-                    MessageBox.Show("Bạn chưa đúng số điện thoại!", "Thông báo");
-                }
                 if (txtAdd.Text == string.Empty)
                 {
                     txtAdd.Focus();
@@ -219,17 +224,25 @@ namespace PBLnh2
                 }
                 tn.NgheNghiep = txtJob.Text;
                 tn.NguyenQuan = txtQQ.Text;
-                tn.SDT = txtSDT.Text;
-                try
+                if(txtSDT.Text != string.Empty)
                 {
-                    int tempp = Convert.ToInt32(tn.SDT);
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Bạn chưa nhập đúng SDT", "Thông báo");
-                    txtSDT.Focus();
-                    tn.SDT = string.Empty;
-                    return;
+                    tn.SDT = txtSDT.Text;
+                    try
+                    {
+                        int temp = Convert.ToInt32(tn.SDT);
+                        if (tn.SDT.Length != 10)
+                        {
+                            MessageBox.Show("Số điện thoại phải có 10 chữ số!!", "Thông báo");
+                            return;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Bạn chưa nhập đúng số điện thoại", "Thông báo");
+                        txtSDT.Focus();
+                        tn.SDT = string.Empty;
+                        return;
+                    }
                 }
                 try
                 {
@@ -247,12 +260,18 @@ namespace PBLnh2
                     tn.Gender = true;
                 }
                 else tn.Gender = false;
-
                if(BLL.BLL_Thongtinhankhau.Instance.CheckCMND(tn.CMND) == false)
                 {
+                    if(tn.IDQuanhe == 1)
+                    {
+                        if (BLL.BLL_DSHokhau.Instance.CheckChuho(Convert.ToInt32(tn.SoSHK)))
+                        {
+                            MessageBox.Show("Số sổ hộ khẩu không đúng hoặc quan hệ với chủ hộ không đúng \n Mỗi hộ chỉ tồn tại 1 chủ hộ!", "Thông báo");
+                        }
+                    }
                     if (BLL.BLL_Thongtinhankhau.AddNhankhau(tn) == true)
                     {
-                        MessageBox.Show("Đã cập nhật thành công " + tn.Name + " vào cơ sở dữ liệu!", "Thông báo");
+                        MessageBox.Show("Đã thêm thành công " + tn.Name + " vào cơ sở dữ liệu!", "Thông báo");
                         this.Close();
                     }
                     else
@@ -265,7 +284,7 @@ namespace PBLnh2
                 {
                     if(BLL.BLL_Thongtinhankhau.Instance.UpdateNK(tn) == true)
                     {
-                        MessageBox.Show("Đã thêm thành công " + tn.Name + " vào cơ sở dữ liệu!", "Thông báo");
+                        MessageBox.Show("Đã cập nhật thành công " + tn.Name + " vào cơ sở dữ liệu!", "Thông báo");
                         this.Close();
                     }
                     else
@@ -284,21 +303,7 @@ namespace PBLnh2
 
         private void label12_Click(object sender, EventArgs e)
         {
-            Editmode = true;
-            btnView.Text = "Lưu chỉnh sửa";
-            txtAdd.ReadOnly = false;
-            txtCMND.ReadOnly = false;
-            txtDantoc.ReadOnly = false;
-            txtdate.ReadOnly = false;
-            txtQH.ReadOnly = false;
-            txtGender.ReadOnly = false;
-            txtJob.ReadOnly = false;
-            txtmonth.ReadOnly = false;
-            txtName.ReadOnly = false;
-            txtQQ.ReadOnly = false;
-            txtSDT.ReadOnly = false;
-            txtSHK.ReadOnly = false;
-            txtYear.ReadOnly = false;
+            ActiEdit();
         }
 
         private void txtCMND_TextChanged(object sender, EventArgs e)

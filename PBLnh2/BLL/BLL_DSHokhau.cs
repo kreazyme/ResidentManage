@@ -30,6 +30,22 @@ namespace PBLnh2.BLL
                 return ls;
             }
         }
+        public bool CheckChuho(int _SoSHK)
+        {
+            DSHoKhau ds = new DSHoKhau();
+            using(var context = new PBLEntities())
+            {
+                ds = context.DSHoKhaus.Find(_SoSHK);
+            }
+            if(ds == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public bool ThemSHK(DSHoKhau ds)
         {
             try
@@ -40,9 +56,16 @@ namespace PBLnh2.BLL
                 return true;
             }
             catch(Exception e)
-            {
+            { 
                 return false;
             }
+        }
+        public void DelSHK(int _SoSHK)
+        {
+            PBLEntities context = new PBLEntities();
+            DSHoKhau ds = context.DSHoKhaus.Find(_SoSHK);
+            context.DSHoKhaus.Remove(ds);
+            context.SaveChanges();
         }
     }
 }

@@ -53,7 +53,6 @@ namespace PBLnh2.BLL
             PBLEntities context = new PBLEntities();
             return context.Thongtinnhankhaus.ToList();
         }
-
         public  List<Thongtinnhankhau> GetNKbySHK(string m)
         {
             int _SHK = Convert.ToInt32(m);
@@ -95,6 +94,7 @@ namespace PBLnh2.BLL
                 tt.SoSHK = nk.SoSHK;
                 tt.Name = nk.Name;
                 tt.SDT = nk.SDT;
+                context.SaveChanges();
                 return true;
             }
             catch(Exception e)
@@ -102,13 +102,20 @@ namespace PBLnh2.BLL
                 return false;
             }
         }
+    
         public void DelNK(int m)
         {
             PBLEntities context = new PBLEntities();
             int cmnd = Convert.ToInt32(m);
             Thongtinnhankhau nk = context.Thongtinnhankhaus.Find(cmnd);
+            int _SoSHK = Convert.ToInt32(nk.SoSHK);
             context.Thongtinnhankhaus.Remove(nk);
             BLL_Tamtru.Instance.DelTamtru(cmnd);
+            if ((from r in context.Thongtinnhankhaus where r.SoSHK == _SoSHK select r).Count() == 1)
+            {
+                Console.WriteLine(nk.SoSHK.ToString());
+                BLL_DSHokhau.Instance.DelSHK(Convert.ToInt32(nk.SoSHK));
+            }
             context.SaveChanges();
         }
         public  bool CheckCMND(int _cmnd)
@@ -141,6 +148,13 @@ namespace PBLnh2.BLL
             {
                 return ((from r in context.Thongtinnhankhaus orderby r.Name select r).ToList());
             }
+        }
+        public int CounNK(int m)
+        {
+            int coun = 0;
+            PBLEntities context = new PBLEntities();
+            Thongtinnhankhau tn = context.Thongtinnhankhaus.Find(m);
+            return (from r in context.Thongtinnhankhaus where r.SoSHK == tn.SoSHK select r).Count();
         }
     }
 }

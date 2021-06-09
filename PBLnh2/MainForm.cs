@@ -33,12 +33,11 @@ namespace PBLnh2
         private void Resettxt()
         {
             txtSearchContext.Text = "Nhập để tìm kiếm";
-
             txtSearchContext.ForeColor = System.Drawing.Color.FromArgb(110, 173, 255);
-
         }
         private void Createdb()
         {
+            Console.WriteLine("a");
             dtgv.Rows.Clear();
             string Gioitinh = string.Empty;
             foreach(Thongtinnhankhau i in BLL.BLL_Thongtinhankhau.Instance.GetThongtinnhankhaus())
@@ -196,7 +195,7 @@ namespace PBLnh2
             {
                 int index = dtgv.CurrentCell.RowIndex;
                 int _cmnd = Convert.ToInt32(dtgv.Rows[index].Cells[0].Value.ToString());
-                ViewPersion frm = new ViewPersion("them" + _cmnd.ToString());
+                ViewPersion frm = new ViewPersion("them" +  _cmnd.ToString());
                 frm.Show();
             }
             else

@@ -25,6 +25,15 @@ namespace PBLnh2.BLL
         
         public string GetQhbyID(int m)
         {
+            int coun = 0;
+            using(var context = new PBLEntities())
+            {
+                coun = (from r in context.QHChuhoes select r).Count();
+            }
+            if (m > coun || m < 1)
+            {
+                return "Khác";
+            }
             using (var context = new PBLEntities())
             {
                 return (from r in context.QHChuhoes where r.IDQuanhe == m select r.TenQuanhe).FirstOrDefault();
@@ -33,11 +42,14 @@ namespace PBLnh2.BLL
         public int GetIDbyName(string m)
         {
             int _idqh;
-            using(var context = new PBLEntities())
+            try
             {
-                _idqh = (from r in context.QHChuhoes where r.TenQuanhe == m select r.IDQuanhe).First();
+                using (var context = new PBLEntities())
+                {
+                    _idqh = (from r in context.QHChuhoes where r.TenQuanhe == m select r.IDQuanhe).First();
+                }
             }
-            if(_idqh == null)
+            catch (Exception ex)
             {
                 using (var context = new PBLEntities())
                 {
@@ -50,10 +62,7 @@ namespace PBLnh2.BLL
                 contet.QHChuhoes.Add(qh);
                 return _idqh + 1;
             }
-            else
-            {
-                return _idqh;
-            }
+                return _idqh;      
         }
     }
 }
