@@ -24,31 +24,29 @@ namespace PBLnh2
         {
             InitializeComponent();
         }
-        public ViewPersion(string str) : this()
+        public ViewPersion(string str, int n) : this()
         {
+            Permission = n;
             _cmnd = str;
-            if (str.Length == 4)
+            if (Permission == 0)
             {
                 ActiEdit();
                 return;
             }
-            if (str.Substring(0, 4) == "perm")
+            else if (Permission == 1)
             {
-                Permission = 1;
-                _cmnd = str.Substring(4, str.Length - 4);
-                LoadDB();
+                //LoadDB();
                 btnDel.ForeColor = System.Drawing.Color.Silver;
                 btnDel.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
                 Editmode = false;
-                return;
+                //return;
             }
 
-            if (str.Substring(0, 4) == "them")
+            else if (Permission == 3)
             {
-                _cmnd = str.Substring(4, str.Length - 4);
-                LoadDB();
+                //LoadDB();
                 ActiEdit();
-                return;
+                //return;
             }
 
             LoadDB();

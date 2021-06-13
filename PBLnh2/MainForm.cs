@@ -191,7 +191,7 @@ namespace PBLnh2
             {
                 ActiveBut(sender);
                 Dispanel();
-                ViewPersion f = new ViewPersion("them");
+                ViewPersion f = new ViewPersion("null", 0);
                 f.Show();
             }
         }
@@ -210,7 +210,7 @@ namespace PBLnh2
                 {
                     int index = dtgv.CurrentCell.RowIndex;
                     int _cmnd = Convert.ToInt32(dtgv.Rows[index].Cells[0].Value.ToString());
-                    ViewPersion frm = new ViewPersion("them" + _cmnd.ToString());
+                    ViewPersion frm = new ViewPersion( _cmnd.ToString(), 3);
                     frm.Show();
                 }
                 else
@@ -312,7 +312,7 @@ namespace PBLnh2
                 }
                 else
                 {
-                    ViewPersion frm = new ViewPersion(txtSearchContext.Text);
+                    ViewPersion frm = new ViewPersion(txtSearchContext.Text, 4);
                     frm.Show();
                 }
             }
@@ -336,9 +336,9 @@ namespace PBLnh2
             string str = _cmnd.ToString();
             if(Permisson == 1)
             {
-                str = "perm" + _cmnd.ToString();
+                str =  _cmnd.ToString();
             }
-            ViewPersion f = new ViewPersion(str);
+            ViewPersion f = new ViewPersion(str, 2);
             f.Sender = new ViewPersion.SendMessage(Createdb);
             f.Show();
         }

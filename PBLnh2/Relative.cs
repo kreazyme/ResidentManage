@@ -64,7 +64,7 @@ namespace PBLnh2
                     m = i.CMND;
                 }
             }
-            ViewPersion f = new ViewPersion(m.ToString());
+            ViewPersion f = new ViewPersion(m.ToString(), 4);
             f.Show();
         }
     }
