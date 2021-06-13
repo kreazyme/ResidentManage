@@ -14,6 +14,7 @@ namespace PBLnh2
     public partial class ViewPersion : Form
     {
         private string _cmnd;
+        private int Permission = 2;
         private bool Editmode = false;
         public delegate void SendMessage();
         public SendMessage Sender { get; set; }
@@ -31,7 +32,18 @@ namespace PBLnh2
                 ActiEdit();
                 return;
             }
-            if(str.Substring(0, 4) == "them")
+            if (str.Substring(0, 4) == "perm")
+            {
+                Permission = 1;
+                _cmnd = str.Substring(4, str.Length - 4);
+                LoadDB();
+                btnDel.ForeColor = System.Drawing.Color.Silver;
+                btnDel.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+                Editmode = false;
+                return;
+            }
+
+            if (str.Substring(0, 4) == "them")
             {
                 _cmnd = str.Substring(4, str.Length - 4);
                 LoadDB();
@@ -46,7 +58,7 @@ namespace PBLnh2
             btnView.Text = "Lưu chỉnh sửa";
             btnDel.ForeColor = System.Drawing.Color.Silver;
             btnDel.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-           Editmode = true;
+            Editmode = true;
             txtAdd.ReadOnly = false;
             txtCMND.ReadOnly = false;
             txtQH.ReadOnly = false;
@@ -109,32 +121,40 @@ namespace PBLnh2
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if(Editmode == false)
+            if(Permission == 1)
             {
-                Thongtinnhankhau tn = BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd);
-                string str =tn.Name;
-                if (BLL.BLL_Thongtinhankhau.Instance.CounNK(Convert.ToInt32(tn.SoSHK)) == 1);
-                {
-                    str = "hộ gia đình " + str;
-                }
-                DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xoá " + str + " ra khỏi cơ sở dữ liệu ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dlr == DialogResult.Yes)
-                {
-                    BLL.BLL_Thongtinhankhau.Instance.DelNK(Convert.ToInt32(_cmnd));
-                    MessageBox.Show("Đã xoá thành công " + str + " ra khỏi cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK);
-                    Sender();
-                    this.Close();
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Bạn đã huỷ lệnh xoá", "Thông báo");
-                    return;
-                }
+                MessageBox.Show("Bạn phải có quyền cao hơn mới có thể thực hiện chức năng xoá trên cơ sở dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
             }
             else
             {
-                return;
+                if (Editmode == false)
+                {
+                    Thongtinnhankhau tn = BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd);
+                    string str = tn.Name;
+                    if (BLL.BLL_Thongtinhankhau.Instance.CounNK(Convert.ToInt32(tn.SoSHK)) == 1) ;
+                    {
+                        str = "hộ gia đình " + str;
+                    }
+                    DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xoá " + str + " ra khỏi cơ sở dữ liệu ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dlr == DialogResult.Yes)
+                    {
+                        BLL.BLL_Thongtinhankhau.Instance.DelNK(Convert.ToInt32(_cmnd));
+                        MessageBox.Show("Đã xoá thành công " + str + " ra khỏi cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK);
+                        Sender();
+                        this.Close();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn đã huỷ lệnh xoá", "Thông báo");
+                        return;
+                    }
+                }
+                else
+                {
+                    return;
+                }
             }
         }
         private void btnView_Click(object sender, EventArgs e)
@@ -296,13 +316,18 @@ namespace PBLnh2
             }
             else
             {
-                Relative frm = new Relative(_cmnd);
-                frm.Show();
+                Relative frm = new Relative(_cmnd, Permission);
+                frm.Show(); 
             }
         }
 
         private void label12_Click(object sender, EventArgs e)
         {
+            if(Permission == 1)
+            {
+                MessageBox.Show("Bạn phải có quyền cao hơn mới có thể chỉnh sửa nhân khẩu trên cơ sở dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
             ActiEdit();
         }
 

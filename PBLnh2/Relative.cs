@@ -14,14 +14,16 @@ namespace PBLnh2
     public partial class Relative : Form
     {
         private string _cmnd;
+        private int Permission =1;
         private int _SHK;
         public Relative()
         {
             InitializeComponent();
             LoadDG();
         }
-        public Relative(string str)
+        public Relative(string str, int n)
         {
+            Permission = n;
             _cmnd = str;
             InitializeComponent();
             LoadDG();

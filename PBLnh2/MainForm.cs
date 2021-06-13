@@ -13,16 +13,18 @@ namespace PBLnh2
 {
     public partial class MainForm : Form
     {
+        private int Permisson = 2;
         private Button currentBut;
-        public MainForm(Login lg)
+        public MainForm(int n)
         {
             InitializeComponent();
             CustomizeDes();
             Resettxt();
             Createdb();
-            _login = lg;
+            Permisson = n;
+            //_login = lg;
         }
-        private Login _login;
+        //private Login _login;
         public MainForm()
         {
             InitializeComponent();
@@ -181,56 +183,77 @@ namespace PBLnh2
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ActiveBut(sender);
-            Dispanel();
-            ViewPersion f = new ViewPersion("them");
-            f.Show();
+            if(Permisson == 1)
+            {
+                MessageBox.Show("Bạn phải có quyền cao hơn mới có thể thêm được nhân khẩu vào cơ sở dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+            else
+            {
+                ActiveBut(sender);
+                Dispanel();
+                ViewPersion f = new ViewPersion("them");
+                f.Show();
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            ActiveBut(sender);
-            Dispanel();
-            if (dtgv.SelectedRows.Count > 0)
+            if (Permisson == 1)
             {
-                int index = dtgv.CurrentCell.RowIndex;
-                int _cmnd = Convert.ToInt32(dtgv.Rows[index].Cells[0].Value.ToString());
-                ViewPersion frm = new ViewPersion("them" +  _cmnd.ToString());
-                frm.Show();
+                MessageBox.Show("Bạn phải có quyền cao hơn mới có thể chỉnh sửa được nhân khẩu trên cơ sở dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             else
             {
-                MessageBox.Show("Bạn chưa chọn người dân muốn chỉnh sửa thông tin", "Thông báo");
+                ActiveBut(sender);
+                Dispanel();
+                if (dtgv.SelectedRows.Count > 0)
+                {
+                    int index = dtgv.CurrentCell.RowIndex;
+                    int _cmnd = Convert.ToInt32(dtgv.Rows[index].Cells[0].Value.ToString());
+                    ViewPersion frm = new ViewPersion("them" + _cmnd.ToString());
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa chọn người dân muốn chỉnh sửa thông tin", "Thông báo");
+                }
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            ActiveBut(sender);
-            Dispanel();
-            if(dtgv.SelectedRows.Count > 0)
+            if (Permisson == 1)
             {
-                int index = dtgv.CurrentCell.RowIndex;
-                string str = dtgv.Rows[index].Cells[1].Value.ToString();
-                int _cmnd = Convert.ToInt32(dtgv.Rows[index].Cells[0].Value.ToString());
-                DialogResult dlr =  MessageBox.Show("Bạn có chắc chắn muốn xoá " + str + " ra khỏi cơ sở dữ liệu ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if(dlr == DialogResult.Yes)
-                {
-                    dtgv.Rows.RemoveAt(dtgv.SelectedRows[0].Index);
-                    BLL.BLL_Thongtinhankhau.Instance.DelNK(_cmnd);
-                    MessageBox.Show("Đã xoá thành công " + str + " ra khỏi cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    MessageBox.Show("Bạn đã huỷ lệnh xoá", "Thông báo");
-                    return;
-                }
+                MessageBox.Show("Bạn phải có quyền cao hơn mới có thể xoá được nhân khẩu khỏi cơ sở dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             else
             {
-                MessageBox.Show("Bạn chưa chọn người muốn xoá ra khỏi cơ sở dữ liệu!", "Thông báo");
+                ActiveBut(sender);
+                Dispanel();
+                if (dtgv.SelectedRows.Count > 0)
+                {
+                    int index = dtgv.CurrentCell.RowIndex;
+                    string str = dtgv.Rows[index].Cells[1].Value.ToString();
+                    int _cmnd = Convert.ToInt32(dtgv.Rows[index].Cells[0].Value.ToString());
+                    DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xoá " + str + " ra khỏi cơ sở dữ liệu ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dlr == DialogResult.Yes)
+                    {
+                        dtgv.Rows.RemoveAt(dtgv.SelectedRows[0].Index);
+                        BLL.BLL_Thongtinhankhau.Instance.DelNK(_cmnd);
+                        MessageBox.Show("Đã xoá thành công " + str + " ra khỏi cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn đã huỷ lệnh xoá", "Thông báo");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa chọn người muốn xoá ra khỏi cơ sở dữ liệu!", "Thông báo");
+                }
             }
-        }
+            }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -310,7 +333,12 @@ namespace PBLnh2
         private void dtgv_DoubleClick(object sender, EventArgs e)
         {
             int _cmnd = Convert.ToInt32(dtgv.Rows[dtgv.CurrentCell.RowIndex].Cells[0].Value.ToString());
-            ViewPersion f = new ViewPersion(_cmnd.ToString());
+            string str = _cmnd.ToString();
+            if(Permisson == 1)
+            {
+                str = "perm" + _cmnd.ToString();
+            }
+            ViewPersion f = new ViewPersion(str);
             f.Sender = new ViewPersion.SendMessage(Createdb);
             f.Show();
         }

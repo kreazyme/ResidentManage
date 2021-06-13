@@ -27,6 +27,7 @@ namespace PBLnh2.BLL
         }
         public static Thongtinnhankhau GetTTNKbyCMND(string m)
         {
+            Console.WriteLine(m);
             int cmnd = Convert.ToInt32(m);
             using (var context = new PBLEntities())
             {
@@ -151,10 +152,9 @@ namespace PBLnh2.BLL
         }
         public int CounNK(int m)
         {
-            int coun = 0;
             PBLEntities context = new PBLEntities();
-            Thongtinnhankhau tn = context.Thongtinnhankhaus.Find(m);
-            return (from r in context.Thongtinnhankhaus where r.SoSHK == tn.SoSHK select r).Count();
+            int coun =  context.Thongtinnhankhaus.Where(r => r.SoSHK == m).Count();
+            return coun;
         }
     }
 }

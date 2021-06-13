@@ -35,47 +35,59 @@ namespace PBLnh2
 
         }
 
-        private bool CheckLogin()
+        private int CheckLogin()
         {
             Dangnhap login = BLL_Login.Instance.GetUserbyID(txtID.Text);
             if (login == null)
-                return false;
+                return 0;
             if (login.PW.Trim() == txtpw.Text)
-            { 
-                return true;
+            {
+                if (login.Nguoitruycap.Trim() == "2")
+                {
+                    return 2;
+                }
+                else
+                {
+                    return 1;
+                }
             }
-            else return false;
+            else return 0;
         }
 
-        
+
         private void txtLogin_Click(object sender, EventArgs e)
         {
-            if(txtID.Text == string.Empty)
+            if (txtID.Text == string.Empty)
             {
-                MessageBox.Show("Bạn chưa nhập Tên người dùng","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập Tên người dùng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if(txtpw.Text == string.Empty)
+            if (txtpw.Text == string.Empty)
             {
-                MessageBox.Show("Bạn chưa nhập Mật khẩu", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập Mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if(CheckLogin())
-            {
-
-                MainForm f = new MainForm(this);
-                this.Hide();
-                f.Show();
-            }
-            else
-            {
-                MessageBox.Show("Sai thông tin đăng nhập, hãy thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtID.Clear();
-                txtpw.Clear();
-                txtID.Focus();
-            }
+                if (CheckLogin() == 1)
+                {
+                    MainForm f = new MainForm(1);
+                    this.Hide();
+                    f.Show();
+                }
+                else if (CheckLogin() == 2)
+                {
+                    MainForm f = new MainForm(2);
+                    this.Hide();
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Sai thông tin đăng nhập, hãy thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtID.Clear();
+                    txtpw.Clear();
+                    txtID.Focus();
+                }
+            
         }
-
         private void txtCreate_Click_1(object sender, EventArgs e)
         {
             NewAcc n = new NewAcc();
