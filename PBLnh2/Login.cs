@@ -106,5 +106,40 @@ namespace PBLnh2
             Close();
         }
 
+        private void txtpw_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                if (txtID.Text == string.Empty)
+                {
+                    MessageBox.Show("Bạn chưa nhập Tên người dùng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (txtpw.Text == string.Empty)
+                {
+                    MessageBox.Show("Bạn chưa nhập Mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (CheckLogin() == 1)
+                {
+                    MainForm f = new MainForm(1);
+                    this.Hide();
+                    f.Show();
+                }
+                else if (CheckLogin() == 2)
+                {
+                    MainForm f = new MainForm(2);
+                    this.Hide();
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Sai thông tin đăng nhập, hãy thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtID.Clear();
+                    txtpw.Clear();
+                    txtID.Focus();
+                }
+            }
+        }
     }
 }

@@ -273,12 +273,11 @@ namespace PBLnh2
             {
 
                 List<Thongtinnhankhau> ls = BLL.BLL_Thongtinhankhau.Instance.GetNKbyTen(txtSearchContext.Text);
-                if(ls == null)
+                if(ls.Count == 0)
                 {
                     MessageBox.Show("Không thể tìm thấy người tên " + txtSearchContext.Text, "Thông báo");
                 }
-                else
-                {   dtgv.Rows.Clear();
+                   dtgv.Rows.Clear();
                     foreach (Thongtinnhankhau i in ls)
                     {
                         string Gioitinh = "Nữ";
@@ -288,7 +287,6 @@ namespace PBLnh2
                         }
                         dtgv.Rows.Add(i.CMND.ToString(), i.Name, Gioitinh, i.dob.Value.Year.ToString(), i.SDT, i.Diachi);
                     }
-                }
             }
             ActiveBut(sender);
             Dispanel();
@@ -309,6 +307,7 @@ namespace PBLnh2
                 if (tn == null)
                 {
                     MessageBox.Show("Không thể tìm thấy người có số CMND " + txtSearchContext.Text, "Thông báo");
+                    dtgv.Rows.Clear();
                 }
                 else
                 {
@@ -338,23 +337,34 @@ namespace PBLnh2
             {
                 str =  _cmnd.ToString();
             }
-            ViewPersion f = new ViewPersion(str, 2);
+            ViewPersion f = new ViewPersion(str, 1);
             f.Sender = new ViewPersion.SendMessage(Createdb);
             f.Show();
         }
 
         private void butSearchFamily_Click(object sender, EventArgs e)
         {
-            dtgv.Rows.Clear();
-            foreach(Thongtinnhankhau i in BLL.BLL_Thongtinhankhau.Instance.ListChuho())
+            if (txtSearchContext.Text == "Nhập để tìm kiếm")
             {
-                string Gioitinh = "Nữ";
-                if (i.Gender == true)
-                {
-                    Gioitinh = "Nam";
-                }
-                dtgv.Rows.Add(i.CMND.ToString(), i.Name, Gioitinh, i.dob.Value.Year.ToString(), i.SDT, i.Diachi);
+                MessageBox.Show("Bạn chưa nhập vào số Sổ Hộ Khẩu cần tìm!", "Thông báo");
+                Resettxt();
+                return;
             }
+            dtgv.Rows.Clear();
+            List<Thongtinnhankhau> lsnk = BLL.BLL_Thongtinhankhau.Instance.GetNKbySHK(txtSearchContext.Text.ToString());
+            if(lsnk.Count == 0)
+            {
+                MessageBox.Show( "Không có người nào có số Sổ Hộ Khẩu là " + txtSearchContext.Text.ToString(), "Thông báo");
+            }
+                foreach (Thongtinnhankhau i in lsnk)
+                {
+                    string Gioitinh = "Nữ";
+                    if (i.Gender == true)
+                    {
+                        Gioitinh = "Nam";
+                    }
+                    dtgv.Rows.Add(i.CMND.ToString(), i.Name, Gioitinh, i.dob.Value.Year.ToString(), i.SDT, i.Diachi);
+                }
             ActiveBut(sender);
             Dispanel();
         }
@@ -366,13 +376,10 @@ namespace PBLnh2
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //_login.Show();
-            //this.Close();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //_login.ShowDialog();
         }
     }
 }

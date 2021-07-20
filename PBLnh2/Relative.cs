@@ -34,7 +34,7 @@ namespace PBLnh2
             int n = Convert.ToInt32(BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd).IDQuanhe);
             foreach (Thongtinnhankhau i in BLL.BLL_Thongtinhankhau.Instance.GetNKbySHK(_SHK.ToString()))
             {
-                string QHChuho = BLL.BLL_Chuho.Instance.GetQhbyID(n);
+                string QHChuho = BLL.BLL_Chuho.Instance.GetQhbyID(Convert.ToInt32(i.IDQuanhe));
                 string _gender = "Nam";
                 if(i.Gender == false)
                 {

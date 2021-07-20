@@ -69,6 +69,7 @@ namespace PBLnh2
             this.txtpw.PasswordChar = '*';
             this.txtpw.Size = new System.Drawing.Size(171, 31);
             this.txtpw.TabIndex = 3;
+            this.txtpw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpw_KeyPress);
             // 
             // txtLogin
             // 

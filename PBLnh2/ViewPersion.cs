@@ -79,8 +79,12 @@ namespace PBLnh2
 
         private void LoadDB()
         {
-            if(Editmode == false)
+            if (Editmode == true)
             {
+                btnView.Text = "Lưu thay đổi";
+                this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+                btnDel.ForeColor = System.Drawing.Color.LightGray;
+            }
                 Thongtinnhankhau tn = BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd);
 
                 txtCMND.Text = _cmnd.ToString();
@@ -104,13 +108,7 @@ namespace PBLnh2
                 txtdate.Text = tn.dob.Value.Day.ToString();
                 txtmonth.Text = tn.dob.Value.Month.ToString();
                 txtYear.Text = tn.dob.Value.Year.ToString();
-            }
-            else
-            {
-                btnView.Text = "Lưu thay đổi";
-                this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-                btnDel.ForeColor = System.Drawing.Color.LightGray;
-            }
+
         }
         private void label15_Click(object sender, EventArgs e)
         {
@@ -130,7 +128,7 @@ namespace PBLnh2
                 {
                     Thongtinnhankhau tn = BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd);
                     string str = tn.Name;
-                    if (BLL.BLL_Thongtinhankhau.Instance.CounNK(Convert.ToInt32(tn.SoSHK)) == 1) ;
+                    if (BLL.BLL_Thongtinhankhau.Instance.CounNK(Convert.ToInt32(tn.SoSHK)) == 1);
                     {
                         str = "hộ gia đình " + str;
                     }
@@ -218,7 +216,7 @@ namespace PBLnh2
                 {
                     tn.CMND = Convert.ToInt32(txtCMND.Text);
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
                     MessageBox.Show("Bạn chưa nhập đúng số CMND", "Thông báo");
                     txtCMND.Focus();
@@ -229,7 +227,6 @@ namespace PBLnh2
                 tn.Name = txtName.Text;
                 
                 tn.IDQuanhe = BLL.BLL_Chuho.Instance.GetIDbyName(txtQH.Text);
-                MessageBox.Show(tn.IDQuanhe.ToString());
                 try
                 {
                     tn.SoSHK = Convert.ToInt32(txtSHK.Text);
@@ -254,7 +251,7 @@ namespace PBLnh2
                             return;
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         MessageBox.Show("Bạn chưa nhập đúng số điện thoại", "Thông báo");
                         txtSDT.Focus();
@@ -267,7 +264,7 @@ namespace PBLnh2
                     DateTime dt = new DateTime(Convert.ToInt32(txtYear.Text), Convert.ToInt32(txtmonth.Text), Convert.ToInt32(txtdate.Text));
                     tn.dob = dt;
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     MessageBox.Show("Bạn chưa nhập đúng ngày tháng năm sinh", "Thông báo");
                     txtdate.Focus();
