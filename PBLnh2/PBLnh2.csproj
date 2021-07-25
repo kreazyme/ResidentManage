@@ -81,22 +81,22 @@
     <Compile Include="DAL\DSHoKhau.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Views\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Views\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -104,10 +104,10 @@
     <Compile Include="DAL\QHChuho.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
-    <Compile Include="Relative.cs">
+    <Compile Include="Views\Relative.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Relative.Designer.cs">
+    <Compile Include="Views\Relative.Designer.cs">
       <DependentUpon>Relative.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Tamtru.cs">
@@ -116,19 +116,19 @@
     <Compile Include="DAL\Thongtinnhankhau.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewPersion.cs">
+    <Compile Include="Views\ViewPersion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewPersion.Designer.cs">
+    <Compile Include="Views\ViewPersion.Designer.cs">
       <DependentUpon>ViewPersion.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -141,10 +141,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Relative.resx">
+    <EmbeddedResource Include="Views\Relative.resx">
       <DependentUpon>Relative.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewPersion.resx">
+    <EmbeddedResource Include="Views\ViewPersion.resx">
       <DependentUpon>ViewPersion.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DAL\data.edmx">
