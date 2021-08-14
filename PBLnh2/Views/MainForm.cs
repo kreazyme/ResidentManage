@@ -333,11 +333,19 @@ namespace PBLnh2
         {
             int _cmnd = Convert.ToInt32(dtgv.Rows[dtgv.CurrentCell.RowIndex].Cells[0].Value.ToString());
             string str = _cmnd.ToString();
+            int temp =0;
             if(Permisson == 1)
             {
+                temp = 1;
                 str =  _cmnd.ToString();
             }
-            ViewPersion f = new ViewPersion(str, 1);
+            else if(Permisson == 2)
+            {
+                temp = 2;
+                str = _cmnd.ToString();
+            }
+
+            ViewPersion f = new ViewPersion(str, temp);
             f.Sender = new ViewPersion.SendMessage(Createdb);
             f.Show();
         }

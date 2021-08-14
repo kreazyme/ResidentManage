@@ -19,6 +19,11 @@ namespace PBLnh2.DAL
         {
             this.Thongtinnhankhaus = new HashSet<Thongtinnhankhau>();
         }
+        public DSHoKhau(int _soSHK, string _chuho)
+        {
+            this.SoSHK = _soSHK;
+            this.Chuho = _chuho;
+        }
     
         public int SoSHK { get; set; }
         public string Chuho { get; set; }

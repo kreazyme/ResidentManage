@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using PBLnh2.BLL;
 using PBLnh2.DAL;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using System.Windows.Forms;
-using PBLnh2.BLL;
 
 namespace PBLnh2
 {
@@ -67,26 +60,26 @@ namespace PBLnh2
                 MessageBox.Show("Bạn chưa nhập Mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-                if (CheckLogin() == 1)
-                {
-                    MainForm f = new MainForm(1);
-                    this.Hide();
-                    f.Show();
-                }
-                else if (CheckLogin() == 2)
-                {
-                    MainForm f = new MainForm(2);
-                    this.Hide();
-                    f.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Sai thông tin đăng nhập, hãy thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtID.Clear();
-                    txtpw.Clear();
-                    txtID.Focus();
-                }
-            
+            if (CheckLogin() == 1)
+            {
+                MainForm f = new MainForm(1);
+                this.Hide();
+                f.Show();
+            }
+            else if (CheckLogin() == 2)
+            {
+                MainForm f = new MainForm(2);
+                this.Hide();
+                f.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai thông tin đăng nhập, hãy thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtID.Clear();
+                txtpw.Clear();
+                txtID.Focus();
+            }
+
         }
         private void txtCreate_Click_1(object sender, EventArgs e)
         {
@@ -108,7 +101,7 @@ namespace PBLnh2
 
         private void txtpw_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 if (txtID.Text == string.Empty)
                 {

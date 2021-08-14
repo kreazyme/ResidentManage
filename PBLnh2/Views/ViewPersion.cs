@@ -30,6 +30,7 @@ namespace PBLnh2
             _cmnd = str;
             if (Permission == 0)
             {
+                label2.Text = "THÊM THÔNG TIN NGƯỜI DÂN";
                 ActiEdit();
                 return;
             }
@@ -40,6 +41,10 @@ namespace PBLnh2
                 btnDel.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
                 Editmode = false;
                 //return;
+            }
+            else if (Permission == 2)
+            {
+                Editmode = false;
             }
 
             else if (Permission == 3)
@@ -79,19 +84,19 @@ namespace PBLnh2
 
         private void LoadDB()
         {
-            if (Editmode == true)
+/*            if (Editmode == true)
             {
                 btnView.Text = "Lưu thay đổi";
                 this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
                 btnDel.ForeColor = System.Drawing.Color.LightGray;
-            }
+            }*/
                 Thongtinnhankhau tn = BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd);
 
                 txtCMND.Text = _cmnd.ToString();
                 txtAdd.Text = tn.Diachi;
                 txtQH.Text = BLL.BLL_Chuho.Instance.GetQhbyID(Convert.ToInt32(tn.IDQuanhe));
                 txtDantoc.Text = tn.Dantoc;
-                if (tn.Gender == false)
+                if (tn.Gender == true)
                 {
                     txtGender.Text = "Nam";
                 }
@@ -128,7 +133,7 @@ namespace PBLnh2
                 {
                     Thongtinnhankhau tn = BLL.BLL_Thongtinhankhau.GetTTNKbyCMND(_cmnd);
                     string str = tn.Name;
-                    if (BLL.BLL_Thongtinhankhau.Instance.CounNK(Convert.ToInt32(tn.SoSHK)) == 1);
+                    if (BLL.BLL_Thongtinhankhau.Instance.CounNK(Convert.ToInt32(tn.SoSHK)) == 1)
                     {
                         str = "hộ gia đình " + str;
                     }

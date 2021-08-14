@@ -27,8 +27,15 @@ namespace PBLnh2.BLL
         }
         public static Thongtinnhankhau GetTTNKbyCMND(string m)
         {
-            Console.WriteLine(m);
-            int cmnd = Convert.ToInt32(m);
+            int cmnd = 0;
+            try
+            {
+                cmnd= Convert.ToInt32(m);
+            }
+            catch (Exception)
+            {
+                return new Thongtinnhankhau();
+            }
             using (var context = new PBLEntities())
             {
                 var nk = (from r in context.Thongtinnhankhaus where r.CMND == cmnd select r).FirstOrDefault();
@@ -37,9 +44,23 @@ namespace PBLnh2.BLL
         }
         public static bool AddNhankhau(Thongtinnhankhau nk)
         {
+            PBLEntities context = new PBLEntities();
+            bool isAddDShokhau = true;
+            foreach(DSHoKhau i in context.DSHoKhaus.ToList())
+            {
+                if(i.SoSHK == nk.SoSHK)
+                {
+                    isAddDShokhau = false;
+                    break;
+                }
+            }
             try
             {
-                PBLEntities context = new PBLEntities();
+                if(isAddDShokhau == true)
+                {
+                    DSHoKhau ds = new DSHoKhau(Convert.ToInt32(nk.SoSHK), nk.CMND.ToString());
+                    BLL_DSHokhau.Instance.ThemSHK(ds);
+                }
                 context.Thongtinnhankhaus.Add(nk);
                 context.SaveChanges();
                 return true;
@@ -56,7 +77,16 @@ namespace PBLnh2.BLL
         }
         public  List<Thongtinnhankhau> GetNKbySHK(string m)
         {
-            int _SHK = Convert.ToInt32(m);
+            int _SHK = 0;
+            try
+            {
+                _SHK = Convert.ToInt32(m);
+            }
+            catch(Exception e)
+            {
+                List<Thongtinnhankhau> ls = new List<Thongtinnhankhau>();
+                return ls;
+            }
             using (var context = new PBLEntities())
             {
                 List<Thongtinnhankhau> ls = (from r in context.Thongtinnhankhaus where r.SoSHK == _SHK select r).ToList();

@@ -250,4 +250,8 @@
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>taskkill /IM ServiceHub.DataWarehouseHost.exe /F 2&gt;nul 1&gt;nul 
+Exit 0</PreBuildEvent>
+  </PropertyGroup>
 </Project>
